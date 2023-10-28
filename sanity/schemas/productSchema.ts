@@ -11,7 +11,7 @@ const productSchema = {
             validation: (Rule: any) => Rule.required()
         },
         {
-            name: 'alug',
+            name: 'slug',
             title: 'Slug',
             type: 'slug',
             options: {

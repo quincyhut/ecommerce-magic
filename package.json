@@ -12,13 +12,18 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.18.1",
     "@stripe/stripe-js": "^2.1.10",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.290.0",
     "next": "^14.0.0",
     "next-sanity": "^5.5.10",
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^3.18.1",
     "stripe": "^14.2.0",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.2.3",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "typescript": "^5",
