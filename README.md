@@ -61,10 +61,10 @@ Before you start, make sure you have the following installed on your system:
    npx tailwindcss init -p
 ```
 
-**Step 2**: Setup ShadCN UI Component Library
+**Step 2**: Setup Flowbite & flowbite-react UI Component Library
 
 ```bash
-   npx shadcn-ui@latest init
+   npm install flowbite flowbite-react --save
 ```
 
 **Step 2**: Setup Sanity.io for CMS
