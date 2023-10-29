@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+import Link from "next/link";
+import { CiSearch } from "react-icons/ci";
 
 import { cn } from "../../lib/utils/utils";
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,9 +13,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import { navMenuItems } from "./constant";
-import RightNavMenu from "./RightNavMenu";
 
 export default function MidNavMenu() {
   return (
@@ -56,7 +55,7 @@ export default function MidNavMenu() {
         }
 
       </NavigationMenuList>
-      <RightNavMenu />
+      <CiSearch className=" ml-10 text-3xl cursor-pointer hover:opacity-5" />
     </NavigationMenu>
   )
 }
