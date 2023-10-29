@@ -69,3 +69,7 @@ Before you start, make sure you have the following installed on your system:
 ```bash
    npm i stripe @stripe/stripe-js
 ```
+## Authors
+
+- [Parbat Lama](https://lamaparbat.com.np/)
+
