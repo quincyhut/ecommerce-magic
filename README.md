@@ -1,3 +1,6 @@
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)]()
+
 # ECOMMERCE CLOTHING BRAND SITE
 Welcome to the documentation for our eCommerce clothing website built with Next.js 14, Sanity.io, Tailwind CSS, and Stripe integration. This document will provide an overview of the project structure, setup instructions, and key features.
 
