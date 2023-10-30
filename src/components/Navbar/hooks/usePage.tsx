@@ -1,22 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 export const usePage = () => {
-    const [showMenu, setShowMenu] = useState(false);
+    const [showSearchbar, setShowSearchbar] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener("resize", () => {
-            setShowMenu(window.innerWidth < 900);
-        });
+    const handleShowSearchbar = useCallback(() => {
+        setShowSearchbar(!showSearchbar);
+    }, [showSearchbar]);
 
-        return () => {
-            window.removeEventListener("resize", () => {});
-        }
+    const handleHideSearchbar = useCallback(() => {
+        console.log("leaver")
+        setShowSearchbar(false);
+    }, [showSearchbar]);
 
-    }, []);
 
     return {
-        showMenu
+        showSearchbar,
+        handleShowSearchbar,
+        handleHideSearchbar
     }
 }

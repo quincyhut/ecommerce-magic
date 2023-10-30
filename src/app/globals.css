@@ -4,17 +4,17 @@
 
 @font-face {
   font-family: 'brandLogo';
-  src: url('/fonts/Barriecito-Regular.ttf') format('truetype'); 
+  src: url('/fonts/Barriecito-Regular.ttf') format('truetype');
 }
 
-@font-face{
+@font-face {
   font-family: 'globalFontFamily';
   src: url('/fonts/Signika-VariableFont_GRAD,wght.ttf') format('truetype');
 }
 
 
 .brandLogoText {
-  font-size: 30px;
+  font-size: 27px;
   font-family: 'brandLogo';
 }
 
@@ -24,4 +24,12 @@
 
 .flex-between {
   @apply flex justify-between items-center flex-wrap;
+}
+
+.navbar-sm-view {
+  @apply fixed bg-white left-0 top-[60px] w-screen h-screen z-50;
+}
+
+.navbar-lg-view {
+  @apply static;
 }
