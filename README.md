@@ -61,19 +61,25 @@ Before you start, make sure you have the following installed on your system:
    npx tailwindcss init -p
 ```
 
-**Step 2**: Setup Flowbite & flowbite-react UI Component Library
+**Step 3**: Setup Flowbite & flowbite-react UI Component Library
 
 ```bash
    npm install flowbite flowbite-react --save
 ```
 
-**Step 2**: Setup Sanity.io for CMS
+**Step 4**: Install React Loading Skeleton package for Skeleton loading effect in Product Card
+
+```bash
+   npm i react-loading-skeleton  
+```
+
+**Step 5**: Setup Sanity.io for CMS
 
 ```bash
    npm create sanity@latest
 ```
 
-**Step 2**: Setup Stripe payment gateway
+**Step 6**: Setup Stripe payment gateway
 
 ```bash
    npm i stripe @stripe/stripe-js
