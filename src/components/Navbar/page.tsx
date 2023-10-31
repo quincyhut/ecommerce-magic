@@ -1,24 +1,21 @@
 "use client";
 
 import { Avatar, Badge, Dropdown, Navbar } from "flowbite-react";
-import { MdFavoriteBorder, MdOutlineLogout, MdOutlineManageAccounts, MdOutlineArrowOutward } from "react-icons/md";
+import { MdFavoriteBorder, MdOutlineLogout, MdOutlineManageAccounts } from "react-icons/md";
 import { BiPurchaseTag, BiRightArrowAlt } from "react-icons/bi";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { BsSearch } from "react-icons/bs";
 
-import { usePage } from './hooks/usePage';
-import Image from 'next/image';
+import { useNavbar } from './useNavbar';
 import Link from 'next/link';
 import SearchModal from '../SearchModal/page';
 import ProductCard from "../ProductCard/page";
 
 const NavbarComp = () => {
   const {
-    isLoading,
     showSearchbar,
-    handleShowSearchbar,
-    handleSearch
-  } = usePage();
+    handleShowSearchbar
+  } = useNavbar();
 
   return (
     <Navbar fluid rounded className='py-5'>
@@ -28,11 +25,7 @@ const NavbarComp = () => {
       <div className="flex md:order-2 items-center">
         <BsSearch className="ml-4 mr-3 text-2xl text-slate-600 cursor-pointer" onClick={handleShowSearchbar} />
         {showSearchbar && (
-          <SearchModal
-            isLoading={isLoading}
-            handleShowSearchbar={handleShowSearchbar}
-            handleSearch={handleSearch}
-          />
+          <SearchModal handleShowSearchbar={handleShowSearchbar} />
         )}
         <Badge color='white' className='mx-3 relative cursor-pointer'>
           <LiaShoppingBagSolid className='text-4xl text-slate-700' />
