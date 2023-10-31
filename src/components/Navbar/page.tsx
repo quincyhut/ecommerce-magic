@@ -1,23 +1,25 @@
 "use client";
 
-import React from 'react';
 import { Avatar, Badge, Dropdown, Navbar } from "flowbite-react";
 import { MdFavoriteBorder, MdOutlineLogout, MdOutlineManageAccounts, MdOutlineArrowOutward } from "react-icons/md";
-import { BiPurchaseTag, BiRightArrowAlt, BiSearch } from "react-icons/bi";
+import { BiPurchaseTag, BiRightArrowAlt } from "react-icons/bi";
 import { LiaShoppingBagSolid } from "react-icons/lia";
-import { RxCross1 } from "react-icons/rx";
 import { BsSearch } from "react-icons/bs";
-
 
 import { usePage } from './hooks/usePage';
 import Image from 'next/image';
 import Link from 'next/link';
 import SearchModal from '../SearchModal/page';
-
+import ProductCard from "../ProductCard/page";
 
 const NavbarComp = () => {
-  const { showSearchbar, handleShowSearchbar, handleHideSearchbar } = usePage();
-  console.log({ showSearchbar })
+  const {
+    isLoading,
+    showSearchbar,
+    handleShowSearchbar,
+    handleSearch
+  } = usePage();
+
   return (
     <Navbar fluid rounded className='py-5'>
       <Navbar.Brand href="https://flowbite-react.com">
@@ -26,7 +28,11 @@ const NavbarComp = () => {
       <div className="flex md:order-2 items-center">
         <BsSearch className="ml-4 mr-3 text-2xl text-slate-600 cursor-pointer" onClick={handleShowSearchbar} />
         {showSearchbar && (
-          <SearchModal handleHideSearchbar={handleHideSearchbar} />
+          <SearchModal
+            isLoading={isLoading}
+            handleShowSearchbar={handleShowSearchbar}
+            handleSearch={handleSearch}
+          />
         )}
         <Badge color='white' className='mx-3 relative cursor-pointer'>
           <LiaShoppingBagSolid className='text-4xl text-slate-700' />
@@ -35,11 +41,7 @@ const NavbarComp = () => {
         <Dropdown
           arrowIcon={false}
           inline
-          label={
-            <>
-              <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-            </>
-          }
+          label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />}
           className='w-[220px]'
         >
           <Dropdown.Header>
@@ -64,14 +66,11 @@ const NavbarComp = () => {
             className='w-[95vw] sm:w-[700px] absolute -left-[200px] border-0 p-3 mt-2'
           >
             <div className='flex gap-6 flex-wrap'>
-
-              <div className='h-fit w-[150px] text-center transition-all duration-500 transform hover:-translate-y-2 hover:p-1 hover:border hover:border-amber-900 group'>
-                <div className='h-[200px] overflow-hidden'>
-                  <Image className='group-hover:scale-110 group-hover:opacity-[0.5]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuC7qVfPwg99T6rpxM7LOoDEsFMTtbpSYxHw&usqp=CAU" height={100} width={100} layout="responsive" objectFit="cover" alt='helo' />
-                  <MdOutlineArrowOutward className="text-2xl text-blue-800 absolute top-2 right-2 hidden group-hover:block" />
-                </div>
-                <h2 className='my-2'>Half Size Tshirt</h2>
-              </div>
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
             </div>
             <Link href="" className='my-3 float-right flex underline underline-offset-4 hover:text-slate-500'>
               Explore More <BiRightArrowAlt className="text-xl mx-2" />
@@ -87,14 +86,11 @@ const NavbarComp = () => {
             className='w-[95vw] sm:w-[700px] absolute -left-[200px] border-0 p-3 mt-2'
           >
             <div className='flex gap-6 flex-wrap'>
-
-              <div className='h-fit w-[150px] text-center transition-all duration-500 transform hover:-translate-y-2 hover:p-1 hover:border hover:border-amber-900 group'>
-                <div className='h-[200px] overflow-hidden'>
-                  <Image className='group-hover:scale-110 group-hover:opacity-[0.5]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuC7qVfPwg99T6rpxM7LOoDEsFMTtbpSYxHw&usqp=CAU" height={100} width={100} layout="responsive" objectFit="cover" alt='helo' />
-                  <MdOutlineArrowOutward className="text-2xl text-blue-800 absolute top-2 right-2 hidden group-hover:block" />
-                </div>
-                <h2 className='my-2'>Half Size Tshirt</h2>
-              </div>
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
             </div>
             <Link href="" className='my-3 float-right flex underline underline-offset-4 hover:text-slate-500'>
               Explore More <BiRightArrowAlt className="text-xl mx-2" />

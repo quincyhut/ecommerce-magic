@@ -1,27 +1,39 @@
-import React from 'react';
-import { BsSearch } from 'react-icons/bs';
+import { Modal } from 'flowbite-react';
+import { BiSearch } from "react-icons/bi";
+import ProductCardSkeleton from '../ProductCardSkeleton/page';
 
-const SearchModal = ({ handleHideSearchbar }: any) => {
+const SearchModal = ({ isLoading, handleShowSearchbar, handleSearch }: any) => {
+
     return (
-        <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto" onClick={handleHideSearchbar}>
-                <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                    <div className="relative transform overflow-hidden rounded bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg" onClick={(e) => e.stopPropagation()}>
-                        <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                            <div className='flex items-center gap-2'>
-                                <input type='search' className='w-full text-sm border-0 focus:outline-none shadow-none' placeholder='Search items...' />
-                                <BsSearch className='mx-2' />
-                            </div>
-                            
-                            <div className=''>
-                            
-                            </div>
-                        </div>
-                    </div>
+        <Modal dismissible popup show={true} onClose={handleShowSearchbar} size='xl' position='top-center' className='rounded' content='inner' theme={{
+            content: {
+                inner: 'bg-white rounded overflow-hidden '
+            }
+        }}>
+            <Modal.Header className=''>
+                <div className='w-full flex items-center mx-2'>
+                    <BiSearch className='text-md text-slate-500' />
+                    <input
+                        type="text"
+                        placeholder='Search items'
+                        className='text-sm border-none font-normal outline-0'
+                        style={{ boxShadow: 'none' }}
+                        onChange={handleSearch}
+                    />
                 </div>
-            </div>
-        </div>
+            </Modal.Header>
+
+            <Modal.Body className='border border-top-red-200'>
+                <div className='mt-2 flex flex-wrap gap-5'>
+                    {
+                        isLoading && <ProductCardSkeleton count={6} />
+                    }
+                    {/* <ProductCard /> */}
+
+                </div>
+            </Modal.Body >
+
+        </Modal >
     )
 }
 

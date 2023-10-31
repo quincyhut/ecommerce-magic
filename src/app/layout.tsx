@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import ContextWrapper from '@/components/ContextWrapper';
 import Navbar from '@/components/Navbar/page';
