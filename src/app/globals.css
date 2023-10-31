@@ -33,3 +33,7 @@
 .navbar-lg-view {
   @apply static;
 }
+
+.separator {
+  @apply w-full border-t border-gray-200;
+}

@@ -3,4 +3,4 @@ import { client } from "./client";
 
 export const getProducts = async (): Promise<Product[]> => {
     return [];
-}
+} 
