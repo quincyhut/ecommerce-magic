@@ -2,7 +2,8 @@
 const nextConfig = {
     images: {
         domains: [
-            "encrypted-tbn0.gstatic.com"
+            "encrypted-tbn0.gstatic.com",
+            "flowbite.com"
         ]
     }
 }

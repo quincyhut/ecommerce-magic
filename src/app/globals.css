@@ -12,10 +12,17 @@
   src: url('/fonts/Signika-VariableFont_GRAD,wght.ttf') format('truetype');
 }
 
+h1 {
+  @apply text-4xl font-extrabold font-mono
+}
 
 .brandLogoText {
   font-size: 27px;
   font-family: 'brandLogo';
+}
+
+.shopBtn {
+  @apply border px-10 py-2 border-black text-black;
 }
 
 .flex-center {

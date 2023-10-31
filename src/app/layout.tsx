@@ -22,10 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <ContextWrapper children={children} />
-        <Footer />
+      <body className={`flex flex-col justify-center items-center ${inter.className}`}>
+        <div className='py-1 px-4 w-full md:w-[75vw]'>
+          <Navbar />
+          <ContextWrapper children={children} />
+          <Footer />
+        </div>
       </body>
     </html>
   )
