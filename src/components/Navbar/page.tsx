@@ -109,6 +109,12 @@ const NavbarComp = () => {
           </Navbar.Link>
 
           <Navbar.Link href="#">
+            <span className='text-black font-semibold'>MEN</span>
+          </Navbar.Link>
+          <Navbar.Link href="#">
+            <span className='text-black font-semibold'>WOMEN</span>
+          </Navbar.Link>
+          <Navbar.Link href="#">
             <span className='text-black font-semibold'>ABOUT</span>
           </Navbar.Link>
           <Navbar.Link href="#">

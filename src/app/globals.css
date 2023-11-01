@@ -16,9 +16,6 @@ h1 {
   @apply text-3xl font-extrabold font-mono
 }
 
-h2 {
-  @apply text-2xl font-extrabold font-mono
-}
 
 .brandLogoText {
   font-size: 27px;
@@ -35,6 +32,14 @@ h2 {
 
 .flex-between {
   @apply flex justify-between items-center flex-wrap;
+}
+
+.flex-evenly {
+  @apply flex justify-evenly items-center flex-wrap;
+}
+
+.flex-start {
+  @apply flex justify-start items-center flex-wrap;
 }
 
 .navbar-sm-view {
