@@ -17,8 +17,8 @@ export default function Home() {
       title: "Summer Sale",
       subtitle: "Hot Summer Deals",
       btnText: "View Discounts",
-      imgSrc1: '/images/banner-1-a.webp',
-      imgSrc2: '/images/banner-1-b.webp',
+      imgSrc1: '/images/banner-2-a.webp',
+      imgSrc2: '/images/banner-2-b.webp',
     },
     {
       title: "Live in Glamour",
@@ -31,17 +31,16 @@ export default function Home() {
       title: "Fall Fashion Preview",
       subtitle: "Fall into Fashion",
       btnText: "Shop Fall Styles",
-      imgSrc1: '/images/banner-1-a.webp',
-      imgSrc2: '/images/banner-1-b.webp',
+      imgSrc1: '/images/banner-4-a.webp',
+      imgSrc2: '/images/banner-4-b.webp',
     },
     {
       title: "Customer Favorites",
       subtitle: "Shop the Bestsellers",
       btnText: "Explore Favorites",
-      imgSrc1: '/images/banner-1-a.webp',
-      imgSrc2: '/images/banner-1-b.webp',
+      imgSrc1: '/images/banner-5-a.webp',
+      imgSrc2: '/images/banner-5-b.webp',
     },
-    // Add more banner objects as needed
   ];
 
 

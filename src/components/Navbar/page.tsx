@@ -11,6 +11,7 @@ import { BsFacebook, BsInstagram, BsTiktok } from "react-icons/bs";
 import ProductCard from "../ProductCard/page";
 
 import { useNavbar } from './useNavbar';
+import Image from 'next/image';
 
 
 const NavbarComp = () => {
@@ -40,7 +41,8 @@ const NavbarComp = () => {
       </Navbar>
       <Navbar fluid rounded className='p-0'>
         <Navbar.Brand href="https://flowbite-react.com">
-          <span className="self-center whitespace-nowrap brandLogoText">11VERSE</span>
+          <Image src='/icons/logo.png' height={150} width={150} alt='logo' />
+          {/* <span className="self-center whitespace-nowrap brandLogoText">11VERSE</span> */}
         </Navbar.Brand>
         <div className="flex md:order-2 items-center">
           <Badge color='white' className='mx-3 relative cursor-pointer'>
