@@ -73,13 +73,19 @@ Before you start, make sure you have the following installed on your system:
    npm i react-loading-skeleton  
 ```
 
-**Step 5**: Setup Sanity.io for CMS
+**Step 5**: Install React Icons Library for rich icons collections
+
+```bash
+   npm i react-icons  
+```
+
+**Step 6**: Setup Sanity.io for CMS
 
 ```bash
    npm create sanity@latest
 ```
 
-**Step 6**: Setup Stripe payment gateway
+**Step 7**: Setup Stripe payment gateway
 
 ```bash
    npm i stripe @stripe/stripe-js
