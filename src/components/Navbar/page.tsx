@@ -41,7 +41,7 @@ const NavbarComp = () => {
       </Navbar>
       <Navbar fluid rounded className='p-0'>
         <Navbar.Brand href="https://flowbite-react.com">
-          <Image src='/icons/logo.png' height={150} width={150} alt='logo' />
+          <Image src='/icons/logo.png' height={130} width={130} alt='logo' />
           {/* <span className="self-center whitespace-nowrap brandLogoText">11VERSE</span> */}
         </Navbar.Brand>
         <div className="flex md:order-2 items-center">
