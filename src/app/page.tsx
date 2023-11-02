@@ -8,6 +8,7 @@ import { GrSecure, GrValidate } from "react-icons/gr";
 import { FaRocket, FaShippingFast } from "react-icons/fa";
 import { HiCubeTransparent } from "react-icons/hi";
 import Image from "next/image";
+import ProductCard from "@/components/ProductCard/page";
 
 export default function Home() {
   const mockCarouselContent = [
@@ -74,10 +75,11 @@ export default function Home() {
       title: 'Shipping',
       subtitle: 'Free, fast, and reliable'
     },
-  ]
+  ];
 
   return (
     <>
+
       <div className="w-[100vw] h-[85vh] relative flex-center">
         <video autoPlay loop muted className="h-full w-full object-cover">
           <source src="/videos/banner.mp4" type="video/mp4" />
@@ -107,7 +109,7 @@ export default function Home() {
           <div className="w-full mt-3 mb-4 flex-between gap-1">
             {
               mockBottomBarContent?.map((d: any, i: number) => (
-                <div key={i} className="flex-start gap-4 sm:gap-5 bg-zinc-50 p-4 w-full sm:flex-1">
+                <div key={i} className="flex-start gap-4 sm:gap-5  p-4 w-full sm:flex-1">
                   {d?.icon}
                   <div>
                     <h3 className="text-md font-semibold">{d?.title}</h3>
@@ -137,7 +139,14 @@ export default function Home() {
         </div>
       </div>
 
-
+      <div className="w-[100vw] flex-center">
+        <div className="py-10 px-4 w-full md:w-[75vw]">
+          <h2 className="text-2xl mb-4 font-semibold logoFontFamily">Featured Collections</h2>
+          <div className="flex-between gap-2">
+            <ProductCard />
+          </div>
+        </div>
+      </div>
 
     </>
   )
