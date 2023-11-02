@@ -25,9 +25,9 @@ export default function RootLayout({
       <body className={`flex flex-col justify-center items-center ${inter.className}`}>
         <div className='py-1 px-4 w-full md:w-[75vw]'>
           <Navbar />
-          <ContextWrapper children={children} />
-          <Footer />
         </div>
+        <ContextWrapper children={children} />
+        <Footer />
       </body>
     </html>
   )

@@ -12,8 +12,19 @@
   src: url('/fonts/Signika-VariableFont_GRAD,wght.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'logoFontFamily';
+  src: url('/fonts/LilitaOne-Regular.ttf') format('truetype');
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
 h1 {
-  @apply text-3xl font-extrabold font-mono
+  @apply text-4xl;
+  font-family: 'logoFontFamily';
 }
 
 
@@ -23,7 +34,7 @@ h1 {
 }
 
 .shopBtn {
-  @apply border px-10 py-2 border-black text-black;
+  @apply border px-8 py-3;
 }
 
 .flex-center {
@@ -40,6 +51,10 @@ h1 {
 
 .flex-start {
   @apply flex justify-start items-center flex-wrap;
+}
+
+.flex-end {
+  @apply flex justify-center items-end flex-wrap;
 }
 
 .navbar-sm-view {

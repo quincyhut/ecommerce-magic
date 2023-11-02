@@ -1,5 +1,4 @@
 export interface IBanner {
-    isImageRotate?: boolean,
     title: string;
     subtitle: string;
     btnText: string;
