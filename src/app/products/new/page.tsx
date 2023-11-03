@@ -1,7 +1,4 @@
-"use client";
-
 import ProductCards from '@/components/ProductCards/page';
-import React from 'react'
 
 const New = () => {
 
@@ -66,6 +63,7 @@ const New = () => {
                     {
                         mockProductLists?.map((d, i: number) => (
                             <ProductCards
+                                key={i}
                                 title={d?.title}
                                 price={d?.price}
                                 prevPrice={d?.prevPrice}

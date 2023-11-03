@@ -174,7 +174,7 @@ export default function Home() {
             }
           </div>
 
-          <Carousel pauseOnHover indicators={false}>
+          <Carousel indicators={false}>
             {
               mockCarouselContent?.map((d: IBanner, i: number) => (
                 <Banner

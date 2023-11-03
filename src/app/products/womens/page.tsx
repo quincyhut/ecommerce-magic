@@ -1,7 +1,4 @@
-"use client";
-
 import ProductCards from '@/components/ProductCards/page';
-import React from 'react'
 
 const Womens = () => {
 
@@ -57,7 +54,6 @@ const Womens = () => {
         },
     ];
 
-
     return (
         <div className="w-[100vw] flex-center">
             <div className="py-10 px-7 w-full md:w-[75vw]">
@@ -66,6 +62,7 @@ const Womens = () => {
                     {
                         mockProductLists?.map((d, i: number) => (
                             <ProductCards
+                                key={i}
                                 title={d?.title}
                                 price={d?.price}
                                 prevPrice={d?.prevPrice}

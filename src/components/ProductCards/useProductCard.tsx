@@ -20,11 +20,16 @@ export const useProductCard = ({ images }: any) => {
 
     }, []);
 
+    const handleAddToCart = useCallback(() => {
+
+    }, []);
+
     return {
         activeCardImg,
         handleMouseOver,
         handleMouseOut,
         handleLoveReact,
-        handleViewDetails
+        handleViewDetails,
+        handleAddToCart,
     }
 }

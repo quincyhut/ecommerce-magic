@@ -1,11 +1,20 @@
-import Image from 'next/image'
+"use client";
+
+import Image from 'next/image';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { IProductCards } from './types';
 import { useProductCard } from './useProductCard';
+import { BsCart2 } from 'react-icons/bs';
 
-const ProductCards = ({ size, images, title, price, prevPrice, reactCount }: IProductCards) => {
-    const { activeCardImg, handleMouseOut, handleMouseOver, handleViewDetails } = useProductCard({ images })
+const ProductCards = ({ size, images, title, price, prevPrice, reactCount = 0 }: IProductCards) => {
+    const { 
+        activeCardImg, 
+        handleMouseOut, 
+        handleMouseOver, 
+        handleViewDetails, 
+        handleAddToCart 
+    } = useProductCard({ images });
 
     return (
         <div className='text-center transition-all duration-500 transform hover:border hover:border-amber-900 group' onMouseOver={handleMouseOver} onMouseLeave={handleMouseOut} onClick={handleViewDetails}>
@@ -13,6 +22,12 @@ const ProductCards = ({ size, images, title, price, prevPrice, reactCount }: IPr
                 <div className="relative w-full h-full">
                     <Image className='group-hover:scale-110 group-hover:opacity-[0.9] cursor-pointer transition-all duration-1000' src={activeCardImg} layout="fill" objectFit="cover" alt='helo' />
                     <MdOutlineArrowOutward className="text-2xl text-black absolute top-2 right-2 hidden group-hover:block" />
+                    <div className={`absolute top-2 left-2 w-fit flex-center gap-1 ${false ? 'bg-red-700 text-white' : 'bg-white '} drop-shadow-sm py-[2px] px-2 rounded-full text-slate-900 cursor-pointer hover:bg-zinc-200`}>
+                        {
+                            false ? <AiFillHeart className='text-2xl' /> : <AiOutlineHeart className='text-2xl' />
+                        }
+                        {reactCount > 0 && <span className='text-sm'>{reactCount}</span>}
+                    </div>
                 </div>
             </div>
             <div className='flex-between px-2 pb-2'>
@@ -23,11 +38,8 @@ const ProductCards = ({ size, images, title, price, prevPrice, reactCount }: IPr
                         <p className='text-sm text-red-600 line-through'>NPR {prevPrice}</p>
                     </div>
                 </div>
-                <div className='flex-center gap-1 bg-white drop-shadow-sm p-1 px-3 rounded-full text-slate-900 cursor-pointer hover:bg-zinc-200'>
-                    {
-                        true ? <AiOutlineHeart className='text-2xl' /> : <AiFillHeart className='text-2xl text-red-700' />
-                    }
-                    <span className='text-sm text-slate-900'>{reactCount}</span>
+                <div className='w-fit bg-white drop-shadow-md rounded-full p-3 cursor-pointer flex-center hover:bg-red-500 text-slate-700 hover:text-white' onClick={handleAddToCart}>
+                    <BsCart2 className='text-2xl' />
                 </div>
             </div>
         </div>

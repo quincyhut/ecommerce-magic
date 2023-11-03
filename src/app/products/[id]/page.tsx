@@ -2,9 +2,11 @@
 
 import React from 'react'
 
-const ProductPreview = () => {
+const ProductPreview = ({ params }: any) => {
+    const { id } = params;
+
     return (
-        <div>ProductPreview</div>
+        <div>Product ID: {id}</div>
     )
 }
 
