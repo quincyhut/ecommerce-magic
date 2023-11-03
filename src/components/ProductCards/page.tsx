@@ -22,7 +22,7 @@ const ProductCards = ({ size, images, title, price, prevPrice, reactCount = 0 }:
                 <div className="relative w-full h-full">
                     <Image className='group-hover:scale-110 group-hover:opacity-[0.9] cursor-pointer transition-all duration-1000' src={activeCardImg} layout="fill" objectFit="cover" alt='helo' />
                     <MdOutlineArrowOutward className="text-2xl text-black absolute top-2 right-2 hidden group-hover:block" />
-                    <div className={`absolute top-2 left-2 w-fit flex-center gap-1 ${false ? 'bg-red-700 text-white' : 'bg-white '} drop-shadow-sm py-[2px] px-2 rounded-full text-slate-900 cursor-pointer hover:bg-zinc-200`}>
+                    <div className={`absolute top-2 left-2 w-fit flex-center gap-1 hover:bg-red-400 hover:text-white ${false ? 'bg-red-400 text-white' : 'bg-white '} drop-shadow-sm py-[2px] px-2 rounded-full text-slate-900 cursor-pointer hover:bg-zinc-200`}>
                         {
                             false ? <AiFillHeart className='text-2xl' /> : <AiOutlineHeart className='text-2xl' />
                         }

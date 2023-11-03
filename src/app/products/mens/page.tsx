@@ -1,4 +1,7 @@
+'use client';
+
 import ProductCards from '@/components/ProductCards/page';
+import { Breadcrumb, Dropdown } from 'flowbite-react';
 import React from 'react'
 
 const Mens = () => {
@@ -59,7 +62,21 @@ const Mens = () => {
     return (
         <div className="w-[100vw] flex-center">
             <div className="py-10 px-7 w-full md:w-[75vw]">
-                <h2 className="text-2xl mb-4 font-semibold logoFontFamily">Mens Wear</h2>
+                <div className='flex-between logoFontFamily bg-zinc-50 px-5 py-4 mb-5'>
+                    <Breadcrumb aria-label="Default breadcrumb example">
+                        <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+                        <Breadcrumb.Item href="#">Products</Breadcrumb.Item>
+                        <Breadcrumb.Item>Mens Wear</Breadcrumb.Item>
+                    </Breadcrumb>
+                    <Dropdown label="Filter" inline className=' w-[200px]'>
+                        <Dropdown.Item>Sort by</Dropdown.Item>
+                        <Dropdown.Item>Newest</Dropdown.Item>
+                        <Dropdown.Item>Price (low to high)</Dropdown.Item>
+                        <Dropdown.Item>Price (high to low)</Dropdown.Item>
+                        <Dropdown.Item>Name A-Z</Dropdown.Item>
+                        <Dropdown.Item>Name Z-A</Dropdown.Item>
+                    </Dropdown>
+                </div>
                 <div className="flex-between gap-5">
                     {
                         mockProductLists?.map((d, i: number) => (
