@@ -76,11 +76,13 @@ const NavbarComp = () => {
               className='w-[95vw] sm:w-[700px] absolute -left-[200px] border-0 p-3 mt-2'
             >
               <div className='flex gap-6 flex-wrap'>
-                <MenuCard />
-                <MenuCard />
-                <MenuCard />
-                <MenuCard />
-                <MenuCard />
+                <MenuCard img='/images/banner-4-a.webp' title='T-Shirts' link='/' />
+                <MenuCard img='/images/jeans.webp' title='Jeans' link='/' />
+                <MenuCard img='/images/suits.webp' title='Suits' link='/' />
+                <MenuCard img='/images/outwear.jpg' title='Outerwear' link='/' />
+                <MenuCard img='/images/activeware.jpeg' title='Activewear' link='/' />
+                <MenuCard img='/images/dresses.webp' title='Dresses' link='/' />
+                <MenuCard img='/images/accessories.webp' title='Accessories' link='/' />
               </div>
               <Link href="" className='my-3 float-right flex underline underline-offset-4 hover:text-slate-500'>
                 Explore More <BiRightArrowAlt className="text-xl mx-2" />

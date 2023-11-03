@@ -5,7 +5,7 @@ import React from 'react'
 
 const Womens = () => {
 
-    const mockProductLists = [
+    const mockProductLists: any[] = [
         {
             title: 'Check Tshirts',
             price: 1200,

@@ -1,3 +1,5 @@
 export interface IMenuCard {
-    size?: string | 'sm' | 'lg';
+    title: string;
+    img: string;
+    link: string;
 }
