@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { MdOutlineArrowOutward } from 'react-icons/md';
 
-const ProductCard = () => {
+const MenuCard = () => {
     return (
         <div className='h-fit w-[150px] text-center transition-all duration-500 transform hover:-translate-y-2 hover:p-1 hover:border hover:border-amber-900 group'>
             <div className='h-[200px] overflow-hidden'>
@@ -13,4 +13,4 @@ const ProductCard = () => {
     )
 }
 
-export default ProductCard;
+export default MenuCard;

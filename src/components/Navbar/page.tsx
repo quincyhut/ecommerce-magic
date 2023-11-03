@@ -8,7 +8,7 @@ import { BiPurchaseTag, BiRightArrowAlt, BiSearch } from "react-icons/bi";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { BsFacebook, BsInstagram, BsTiktok } from "react-icons/bs";
 
-import ProductCard from "../ProductCard/page";
+import MenuCard from "../MenuCard/page";
 
 import { useNavbar } from './useNavbar';
 import Image from 'next/image';
@@ -40,7 +40,7 @@ const NavbarComp = () => {
         <div className='separator'></div>
       </Navbar>
       <Navbar fluid rounded className='p-0'>
-        <Navbar.Brand href="https://flowbite-react.com">
+        <Navbar.Brand href="/">
           <Image src='/icons/logo.png' height={130} width={130} alt='logo' />
           {/* <span className="self-center whitespace-nowrap brandLogoText">11VERSE</span> */}
         </Navbar.Brand>
@@ -72,35 +72,15 @@ const NavbarComp = () => {
             <Dropdown
               arrowIcon={true}
               inline
-              label={<span className='text-black font-semibold'>NEW</span>}
-              className='w-[95vw] sm:w-[700px] absolute -left-[200px] border-0 p-3 mt-2'
-            >
-              <div className='flex gap-6 flex-wrap'>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-              </div>
-              <Link href="" className='my-3 float-right flex underline underline-offset-4 hover:text-slate-500'>
-                Explore More <BiRightArrowAlt className="text-xl mx-2" />
-              </Link>
-            </Dropdown>
-          </Navbar.Link>
-
-          <Navbar.Link href="#">
-            <Dropdown
-              arrowIcon={true}
-              inline
               label={<span className='text-black font-semibold'>CATEGORIES</span>}
               className='w-[95vw] sm:w-[700px] absolute -left-[200px] border-0 p-3 mt-2'
             >
               <div className='flex gap-6 flex-wrap'>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                <MenuCard />
+                <MenuCard />
+                <MenuCard />
+                <MenuCard />
+                <MenuCard />
               </div>
               <Link href="" className='my-3 float-right flex underline underline-offset-4 hover:text-slate-500'>
                 Explore More <BiRightArrowAlt className="text-xl mx-2" />
@@ -109,10 +89,19 @@ const NavbarComp = () => {
           </Navbar.Link>
 
           <Navbar.Link href="#">
-            <span className='text-black font-semibold'>MEN</span>
+            <Link href="/products/new">
+              <span className='text-black font-semibold'>NEW</span>
+            </Link>
           </Navbar.Link>
           <Navbar.Link href="#">
-            <span className='text-black font-semibold'>WOMEN</span>
+            <Link href="/products/mens">
+              <span className='text-black font-semibold'>MEN</span>
+            </Link>
+          </Navbar.Link>
+          <Navbar.Link href="#">
+            <Link href="/products/womens">
+              <span className='text-black font-semibold'>WOMEN</span>
+            </Link>
           </Navbar.Link>
           <Navbar.Link href="#">
             <span className='text-black font-semibold'>ABOUT</span>

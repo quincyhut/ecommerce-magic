@@ -1,3 +1,3 @@
-export interface IProductCard {
+export interface IMenuCard {
     size?: string | 'sm' | 'lg';
 }
