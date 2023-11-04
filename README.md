@@ -90,6 +90,18 @@ Before you start, make sure you have the following installed on your system:
 ```bash
    npm i stripe @stripe/stripe-js
 ```
+
+**Step 8**: Setup Redux toolkit
+
+```bash
+   npm i --save react-redux  @reduxjs/toolkit @types/react-redux
+```
+
+**Step 9**: Setup Redux Persist (For storing redux data in localStorage)
+
+```bash
+   npm i redux-persist @types/redux-persist
+```
 ## Authors
 
 - [Parbat Lama](https://lamaparbat.com.np/)
