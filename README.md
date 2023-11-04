@@ -90,6 +90,12 @@ Before you start, make sure you have the following installed on your system:
 ```bash
    npm i stripe @stripe/stripe-js
 ```
+
+**Step 7**: Setup Redux toolkit
+
+```bash
+   npm i --save react-redux  @reduxjs/toolkit @types/react-redux
+```
 ## Authors
 
 - [Parbat Lama](https://lamaparbat.com.np/)
