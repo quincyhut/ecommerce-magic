@@ -7,17 +7,18 @@ import { IProductCards } from './types';
 import { useProductCard } from './useProductCard';
 import { BsCart2 } from 'react-icons/bs';
 
-const ProductCards = ({ size, images, title, price, prevPrice, reactCount = 0 }: IProductCards) => {
-    const { 
-        activeCardImg, 
-        handleMouseOut, 
-        handleMouseOver, 
-        handleViewDetails, 
-        handleAddToCart 
-    } = useProductCard({ images });
+const ProductCards = (details: IProductCards) => {
+    const { title, price, prevPrice, reactCount = 0 } = details;
+    const {
+        activeCardImg,
+        handleMouseOut,
+        handleMouseOver,
+        handleViewDetails,
+        handleAddToCart
+    } = useProductCard({ ...details });
 
     return (
-        <div className='text-center transition-all duration-500 transform hover:border hover:border-amber-900 group' onMouseOver={handleMouseOver} onMouseLeave={handleMouseOut} onClick={handleViewDetails}>
+        <div className='text-center transition-all duration-500 transform hover:border hover:border-amber-900 group' onMouseOver={handleMouseOver} onMouseLeave={handleMouseOut} onClick={() => handleViewDetails(details)}>
             <div className='h-[350px] w-[250px] overflow-hidden bg-red-200'>
                 <div className="relative w-full h-full">
                     <Image className='group-hover:scale-110 group-hover:opacity-[0.9] cursor-pointer transition-all duration-1000' src={activeCardImg} layout="fill" objectFit="cover" alt='helo' />
@@ -26,7 +27,7 @@ const ProductCards = ({ size, images, title, price, prevPrice, reactCount = 0 }:
                         {
                             false ? <AiFillHeart className='text-2xl' /> : <AiOutlineHeart className='text-2xl' />
                         }
-                        {reactCount > 0 && <span className='text-sm'>{reactCount}</span>}
+                        {reactCount > 0 && <span className='text-[12px]'>{reactCount}</span>}
                     </div>
                 </div>
             </div>

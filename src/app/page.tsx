@@ -79,6 +79,7 @@ export default function Home() {
 
   const mockProductLists: IProductCards[] = [
     {
+      _id: 'a2edre23232332023200',
       title: 'Check Tshirts',
       price: 1200,
       prevPrice: 1523,
@@ -88,6 +89,7 @@ export default function Home() {
 
     },
     {
+      _id: 'a2edre23232332023200',
       title: 'Joggers Pants',
       price: 999,
       prevPrice: 1000,
@@ -96,6 +98,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
+      _id: 'a2edre23232332023200',
       title: 'Bluish Suits',
       price: 2200,
       prevPrice: 5603,
@@ -104,6 +107,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
+      _id: 'a2edre23232332023200',
       title: 'Sporty Trousers',
       price: 2300,
       prevPrice: 3444,
@@ -112,6 +116,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
+      _id: 'a2edre23232332023200',
       title: 'Himalayan Jacket',
       price: 950,
       prevPrice: 1423,
@@ -120,6 +125,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
+      _id: 'a2edre23232332023200',
       title: 'Recked White croks',
       price: 1200,
       prevPrice: 1523,
@@ -199,6 +205,7 @@ export default function Home() {
             {
               mockProductLists?.map((d: IProductCards, i: number) => (
                 <ProductCards
+                  _id={d?._id}
                   title={d?.title}
                   price={d?.price}
                   prevPrice={d?.prevPrice}

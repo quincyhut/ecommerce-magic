@@ -1,8 +1,17 @@
+"use client";
+
 import { useCallback, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+
+import { setPreviewProduct } from "@/redux/reducers/productReducer";
 
 
 export const useProductCard = ({ images }: any) => {
     const [activeCardImg, setActiveCardImgUrl] = useState(images[0]);
+
+    const router = useRouter();
+    const dispatch = useDispatch();
 
     const handleMouseOver = useCallback(() => {
         setActiveCardImgUrl(images[1])
@@ -16,8 +25,9 @@ export const useProductCard = ({ images }: any) => {
 
     }, []);
 
-    const handleViewDetails = useCallback(() => {
-
+    const handleViewDetails = useCallback((details: any) => {
+        dispatch(setPreviewProduct(details));
+        router.push(`/products/${details?._id}`, { scroll: false });
     }, []);
 
     const handleAddToCart = useCallback(() => {
