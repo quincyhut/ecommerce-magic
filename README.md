@@ -22,6 +22,7 @@ Before you start, make sure you have the following installed on your system:
 - npm or yarn
 - Sanity.io account
 - Stripe account [NOTE: Public key & Secret Key]
+  
 ## Table of Contents
 
 - [Project Overview](#project-overview)
