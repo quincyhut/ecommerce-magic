@@ -79,7 +79,7 @@ export default function Home() {
 
   const mockProductLists: IProductCards[] = [
     {
-      _id: 'a2edre23232332023200',
+      _id: 'a2edre23232332023201',
       title: 'Check Tshirts',
       price: 1200,
       quantity: 142,
@@ -92,7 +92,7 @@ export default function Home() {
 
     },
     {
-      _id: 'a2edre23232332023200',
+      _id: 'a2edre23232332023202',
       title: 'Joggers Pants',
       price: 999,
       quantity: 142,
@@ -104,7 +104,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
-      _id: 'a2edre23232332023200',
+      _id: 'a2edre23232332023203',
       title: 'Bluish Suits',
       price: 2200,
       quantity: 142,
@@ -116,7 +116,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
-      _id: 'a2edre23232332023200',
+      _id: 'a2edre23232332023204',
       title: 'Sporty Trousers',
       price: 2300,
       quantity: 142,
@@ -128,7 +128,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
-      _id: 'a2edre23232332023200',
+      _id: 'a2edre23232332023205',
       title: 'Himalayan Jacket',
       price: 950,
       quantity: 142,
@@ -140,7 +140,7 @@ export default function Home() {
       userIds: ['hacker']
     },
     {
-      _id: 'a2edre23232332023200',
+      _id: 'a2edre23232332023206',
       title: 'Recked White croks',
       price: 1200,
       quantity: 142,

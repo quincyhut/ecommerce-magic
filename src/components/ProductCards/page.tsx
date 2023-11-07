@@ -11,10 +11,11 @@ const ProductCards = (details: IProductCards) => {
     const { title, price, prevPrice, reactCount = 0 } = details;
     const {
         activeCardImg,
+        hasAlreadyAddedToCart,
         handleMouseOut,
         handleMouseOver,
         handleViewDetails,
-        handleAddToCart
+        handleAddToCart,
     } = useProductCard({ ...details });
 
     return (
@@ -39,8 +40,8 @@ const ProductCards = (details: IProductCards) => {
                         <p className='text-sm text-red-600 line-through'>NPR {prevPrice}</p>
                     </div>
                 </div>
-                <div className='w-fit bg-white drop-shadow-md rounded-full p-3 cursor-pointer flex-center hover:bg-red-500 text-slate-700 hover:text-white' onClick={handleAddToCart}>
-                    <BsCart2 className='text-2xl' />
+                <div className={`mt-2 w-fit bg-white drop-shadow-md rounded-full p-[11px] cursor-pointer flex-center hover:bg-red-500 text-slate-700 hover:text-white ${hasAlreadyAddedToCart(details) ? 'bg-red-500 text-white' : ''}`} onClick={handleAddToCart}>
+                    <BsCart2 className='text-xl' />
                 </div>
             </div>
         </div>

@@ -1,10 +1,16 @@
+import { IProductCards } from "@/components/ProductCards/types";
+import { useCart } from "@/lib/hooks";
+import { setCartData } from "@/redux/reducers/productReducer";
 import _ from "lodash";
-import { KeyboardEvent, useCallback, useState } from "react";
-import { useSelector } from "react-redux";
+import { KeyboardEvent, useCallback, useMemo, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 
 export const useProductPreview = () => {
     const { previewProduct } = useSelector((state: any) => state.productReducer);
+
+    const dispatch = useDispatch();
+    const { hasAlreadyAddedToCart } = useCart();
 
     const [selectedProduct, setSelectedProduct] = useState({
         ...previewProduct ?? {},
@@ -13,6 +19,7 @@ export const useProductPreview = () => {
         pickColor: [],
     });
     const [activeImage, setActiveImage] = useState(selectedProduct?.images?.[0]);
+
 
     const handleSwitchImage = useCallback((src: string) => {
         setActiveImage(src);
@@ -49,11 +56,12 @@ export const useProductPreview = () => {
     }, [selectedProduct]);
 
     const handleAddToCart = useCallback(() => {
-        console.log({ selectedProduct })
+        if (!hasAlreadyAddedToCart(selectedProduct)) dispatch(setCartData(selectedProduct));
     }, [selectedProduct]);
 
     return {
         ...selectedProduct,
+        hasAlreadyAddedToCart,
         activeImage,
         handleSwitchImage,
         handleQuantityChange,

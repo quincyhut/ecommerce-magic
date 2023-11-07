@@ -16,6 +16,7 @@ import Image from 'next/image';
 
 const NavbarComp = () => {
   const {
+    totalCartCount,
     isLoading,
     searchKeyword,
     handleSearch
@@ -42,12 +43,11 @@ const NavbarComp = () => {
       <Navbar fluid rounded className='p-0'>
         <Navbar.Brand href="/">
           <Image src='/icons/logo.png' height={130} width={130} alt='logo' />
-          {/* <span className="self-center whitespace-nowrap brandLogoText">11VERSE</span> */}
         </Navbar.Brand>
         <div className="flex md:order-2 items-center">
           <Badge color='white' className='mx-3 relative cursor-pointer'>
             <LiaShoppingBagSolid className='text-4xl' />
-            <span className='absolute right-[42%] top-[43%]'>3</span>
+            <span className='absolute right-[42%] top-[43%]'>{totalCartCount}</span>
           </Badge>
           <Dropdown
             arrowIcon={false}

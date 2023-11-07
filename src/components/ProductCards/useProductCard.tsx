@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 
 import { setPreviewProduct } from "@/redux/reducers/productReducer";
+import { useCart } from "@/lib/hooks";
 
 
 export const useProductCard = ({ images }: any) => {
     const [activeCardImg, setActiveCardImgUrl] = useState(images[0]);
+    const { hasAlreadyAddedToCart } = useCart();
 
     const router = useRouter();
     const dispatch = useDispatch();
@@ -35,6 +37,7 @@ export const useProductCard = ({ images }: any) => {
     }, []);
 
     return {
+        hasAlreadyAddedToCart,
         activeCardImg,
         handleMouseOver,
         handleMouseOut,

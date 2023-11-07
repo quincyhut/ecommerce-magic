@@ -12,7 +12,7 @@ const product = createSlice({
     reducers: {
         setPreviewProduct: (state: any, action: any) => { state.previewProduct = action.payload },
         setCartData: (state: any, action: any) => {
-            state.previewProduct = [...state.previewProduct, ...action.payload]
+            state.cart = [...state.cart, action.payload]
         }
     }
 });
