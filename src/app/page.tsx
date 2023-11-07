@@ -82,8 +82,11 @@ export default function Home() {
       _id: 'a2edre23232332023200',
       title: 'Check Tshirts',
       price: 1200,
+      quantity: 142,
       prevPrice: 1523,
       reactCount: 25,
+      sizes: ['XL', 'XL', 'LG'],
+      colors: ['purple','red','blue'],
       images: ['/images/banner-1-a.webp', '/images/banner-1-b.webp'],
       userIds: ['hacker']
 
@@ -92,8 +95,11 @@ export default function Home() {
       _id: 'a2edre23232332023200',
       title: 'Joggers Pants',
       price: 999,
+      quantity: 142,
       prevPrice: 1000,
       reactCount: 12,
+      sizes: ['LG', 'XL', 'MD'],
+      colors: ['red','green','blue'],
       images: ['/images/banner-2-a.webp', '/images/banner-2-b.webp'],
       userIds: ['hacker']
     },
@@ -101,8 +107,11 @@ export default function Home() {
       _id: 'a2edre23232332023200',
       title: 'Bluish Suits',
       price: 2200,
+      quantity: 142,
       prevPrice: 5603,
       reactCount: 0,
+      sizes: ['XL', '2XL'],
+      colors: ['yellow','brown','blue'],
       images: ['/images/banner-3-a.webp', '/images/banner-3-b.webp'],
       userIds: ['hacker']
     },
@@ -110,8 +119,11 @@ export default function Home() {
       _id: 'a2edre23232332023200',
       title: 'Sporty Trousers',
       price: 2300,
+      quantity: 142,
       prevPrice: 3444,
       reactCount: 23,
+      sizes: ['SM', 'MD'],
+      colors: ['purple','red','blue'],
       images: ['/images/banner-4-a.webp', '/images/banner-4-b.webp'],
       userIds: ['hacker']
     },
@@ -119,8 +131,11 @@ export default function Home() {
       _id: 'a2edre23232332023200',
       title: 'Himalayan Jacket',
       price: 950,
+      quantity: 142,
       prevPrice: 1423,
       reactCount: 12,
+      sizes: ['XL', 'LG'],
+      colors: ['hue','red','blue'],
       images: ['/images/banner-5-a.webp', '/images/banner-5-b.webp'],
       userIds: ['hacker']
     },
@@ -128,8 +143,11 @@ export default function Home() {
       _id: 'a2edre23232332023200',
       title: 'Recked White croks',
       price: 1200,
+      quantity: 142,
       prevPrice: 1523,
       reactCount: 15,
+      sizes: ['XL', 'SM', '2SML'],
+      colors: ['purple','red','blue'],
       images: ['/images/banner-3-b.webp', '/images/banner-4-b.webp'],
       userIds: ['hacker']
     },
@@ -139,12 +157,12 @@ export default function Home() {
   return (
     <>
 
-      <div className="w-[100vw] h-[85vh] relative flex-center">
+      <div className="w-[100vw] h-[85vh] relative fleSM-center">
         <video autoPlay loop muted className="h-full w-full object-cover">
           <source src="/videos/banner.mp4" type="video/mp4" />
         </video>
-        <div className="w-full h-full absolute flex-end text bottom-10 top-0 bg-black text-white text-center mb-5 bg-opacity-50 backdrop-blur-sm ">
-          <div className="mb-40 w-[80vw] sm:w-[30vw] flex flex-col items-center gap-6">
+        <div className="w-full h-full absolute fleSM-end teSMt bottom-10 top-0 bg-black teSMt-white teSMt-center mb-5 bg-opacity-50 backdrop-blur-sm ">
+          <div className="mb-40 w-[80vw] sm:w-[30vw] fleSM flex-col items-center gap-6">
             <div>
               <h2 className="text-3xl sm:text-5xl mb-4 font-extrabold logoFontFamily">Embark on a Journey</h2>
               <p className="logoFontFamily text-sm">Wrap yourself in a tapestry of dreams, where threads of culture, tradition, and style intertwine. Our clothing is more than just fabric; it's a journey through the mystique of Nepal.</p>
@@ -207,7 +225,10 @@ export default function Home() {
                 <ProductCards
                   _id={d?._id}
                   title={d?.title}
+                  sizes={d?.sizes}
+                  colors={d?.colors}
                   price={d?.price}
+                  quantity={d?.quantity}
                   prevPrice={d?.prevPrice}
                   reactCount={d?.reactCount}
                   images={d?.images}

@@ -1,9 +1,11 @@
 export interface IProductCards {
     _id: string | any;
-    size?: string | 'sm' | 'lg';
     images: string[];
     title: string;
     price: number;
+    quantity: number;
+    sizes?: string[];
+    colors?: string[];
     prevPrice?: number;
     reactCount?: number;
     userIds?: string[];
