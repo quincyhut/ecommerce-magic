@@ -86,7 +86,7 @@ export default function Home() {
       prevPrice: 1523,
       reactCount: 25,
       sizes: ['XL', 'XL', 'LG'],
-      colors: ['purple','red','blue'],
+      colors: ['purple', 'red', 'blue'],
       images: ['/images/banner-1-a.webp', '/images/banner-1-b.webp'],
       userIds: ['hacker']
 
@@ -99,7 +99,7 @@ export default function Home() {
       prevPrice: 1000,
       reactCount: 12,
       sizes: ['LG', 'XL', 'MD'],
-      colors: ['red','green','blue'],
+      colors: ['red', 'green', 'blue'],
       images: ['/images/banner-2-a.webp', '/images/banner-2-b.webp'],
       userIds: ['hacker']
     },
@@ -111,7 +111,7 @@ export default function Home() {
       prevPrice: 5603,
       reactCount: 0,
       sizes: ['XL', '2XL'],
-      colors: ['yellow','brown','blue'],
+      colors: ['yellow', 'brown', 'blue'],
       images: ['/images/banner-3-a.webp', '/images/banner-3-b.webp'],
       userIds: ['hacker']
     },
@@ -123,7 +123,7 @@ export default function Home() {
       prevPrice: 3444,
       reactCount: 23,
       sizes: ['SM', 'MD'],
-      colors: ['purple','red','blue'],
+      colors: ['purple', 'red', 'blue'],
       images: ['/images/banner-4-a.webp', '/images/banner-4-b.webp'],
       userIds: ['hacker']
     },
@@ -135,7 +135,7 @@ export default function Home() {
       prevPrice: 1423,
       reactCount: 12,
       sizes: ['XL', 'LG'],
-      colors: ['hue','red','blue'],
+      colors: ['hue', 'red', 'blue'],
       images: ['/images/banner-5-a.webp', '/images/banner-5-b.webp'],
       userIds: ['hacker']
     },
@@ -147,7 +147,7 @@ export default function Home() {
       prevPrice: 1523,
       reactCount: 15,
       sizes: ['XL', 'SM', '2SML'],
-      colors: ['purple','red','blue'],
+      colors: ['purple', 'red', 'blue'],
       images: ['/images/banner-3-b.webp', '/images/banner-4-b.webp'],
       userIds: ['hacker']
     },
@@ -223,6 +223,7 @@ export default function Home() {
             {
               mockProductLists?.map((d: IProductCards, i: number) => (
                 <ProductCards
+                  key={i}
                   _id={d?._id}
                   title={d?.title}
                   sizes={d?.sizes}

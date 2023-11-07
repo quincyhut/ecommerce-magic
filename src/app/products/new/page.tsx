@@ -64,8 +64,12 @@ const New = () => {
                         mockProductLists?.map((d, i: number) => (
                             <ProductCards
                                 key={i}
+                                _id={d?._id}
                                 title={d?.title}
+                                sizes={d?.sizes}
+                                colors={d?.colors}
                                 price={d?.price}
+                                quantity={d?.quantity}
                                 prevPrice={d?.prevPrice}
                                 reactCount={d?.reactCount}
                                 images={d?.images}
