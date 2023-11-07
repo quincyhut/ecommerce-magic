@@ -26,7 +26,9 @@ export default function RootLayout({
         <div className='py-1 px-4 w-full md:w-[75vw]'>
           <Navbar />
         </div>
-        <ContextWrapper children={children} />
+        <ContextWrapper>
+          {children}
+        </ContextWrapper>
         <Footer />
       </body>
     </html>
