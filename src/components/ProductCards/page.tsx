@@ -20,7 +20,7 @@ const ProductCards = (details: IProductCards) => {
 
     return (
         <div className='text-center transition-all duration-500 transform hover:border hover:border-amber-900 group' onMouseOver={handleMouseOver} onMouseLeave={handleMouseOut} onClick={() => handleViewDetails(details)}>
-            <div className='h-[350px] w-[250px] overflow-hidden bg-red-200'>
+            <div className='h-[350px] w-[250px] overflow-hidden bg-slate-500'>
                 <div className="relative w-full h-full">
                     <Image className='group-hover:scale-110 group-hover:opacity-[0.9] cursor-pointer transition-all duration-1000' src={activeCardImg} layout="fill" objectFit="cover" alt='helo' />
                     <MdOutlineArrowOutward className="text-2xl text-black absolute top-2 right-2 hidden group-hover:block" />
