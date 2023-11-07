@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 export const useProductPreview = () => {
     const { previewProduct } = useSelector((state: any) => state.productReducer);
 
-    const [selectedProduct, setSelectedProduct] = useState({ 
+    const [selectedProduct, setSelectedProduct] = useState({
         ...previewProduct ?? {},
         quantity: 1,
         pickSize: [],
@@ -21,31 +21,35 @@ export const useProductPreview = () => {
     const handleQuantityChange = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
         const { value }: any = e.target;
 
-        if(value?.length > 2) return;
+        if (value?.length > 2) return;
 
         setSelectedProduct({ ...selectedProduct, quantity: value.replace(/\D/g, '') });
     }, [selectedProduct]);
 
     const handlePickSize = useCallback((size: string) => {
         let _pickSize = [...selectedProduct.pickSize];
-        
-        if(_pickSize.includes(size)) _pickSize = _pickSize.filter((d) => d !== size);
+
+        if (_pickSize.includes(size)) _pickSize = _pickSize.filter((d) => d !== size);
         else _pickSize = [..._pickSize, size];
-        
+
         setSelectedProduct({ ...selectedProduct, pickSize: _pickSize });
     }, [selectedProduct]);
 
     const handlePickColor = useCallback((color: string) => {
         let _pickColor = [...selectedProduct.pickColor];
-        
-        if(_pickColor.includes(color)) _pickColor = _pickColor.filter((d) => d !== color);
+
+        if (_pickColor.includes(color)) _pickColor = _pickColor.filter((d) => d !== color);
         else _pickColor = [..._pickColor, color];
 
         setSelectedProduct({ ...selectedProduct, pickColor: _pickColor });
     }, [selectedProduct]);
 
     const handleBuyProduct = useCallback(() => {
-        console.log({selectedProduct})
+        console.log({ selectedProduct })
+    }, [selectedProduct]);
+
+    const handleAddToCart = useCallback(() => {
+        console.log({ selectedProduct })
     }, [selectedProduct]);
 
     return {
@@ -55,6 +59,7 @@ export const useProductPreview = () => {
         handleQuantityChange,
         handlePickSize,
         handlePickColor,
-        handleBuyProduct
+        handleBuyProduct,
+        handleAddToCart
     }
 }

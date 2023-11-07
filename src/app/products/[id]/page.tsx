@@ -22,9 +22,10 @@ const ProductPreview = () => {
         handleQuantityChange,
         handlePickSize,
         handlePickColor,
-        handleBuyProduct
+        handleBuyProduct,
+        handleAddToCart
     } = useProductPreview();
-console.log({colors, pickColor, sizes, pickSize})
+
     return (
         <div className="w-[100vw] flex-center">
             <div className="py-5 px-4 w-full md:w-[75vw] flex-center ">
@@ -79,7 +80,7 @@ console.log({colors, pickColor, sizes, pickSize})
                         </>
                         <div className='flex flex-col sm:flex-row gap-3 mt-10'>
                             <button className='p-2 w-[150px] border border-black text-black text-sm' onClick={handleBuyProduct}>Buy Now</button>
-                            <button className='p-2 w-[200px] text-white bg-black text-sm'>Add to Cart</button>
+                            <button className='p-2 w-[200px] text-white bg-black text-sm' onClick={handleAddToCart}>Add to Cart</button>
                         </div>
                     </div>
                 </div>
