@@ -157,12 +157,12 @@ export default function Home() {
   return (
     <>
 
-      <div className="w-[100vw] h-[85vh] relative fleSM-center">
+      <div className="w-[100vw] h-[85vh] relative flex-center">
         <video autoPlay loop muted className="h-full w-full object-cover">
           <source src="/videos/banner.mp4" type="video/mp4" />
         </video>
-        <div className="w-full h-full absolute fleSM-end teSMt bottom-10 top-0 bg-black teSMt-white teSMt-center mb-5 bg-opacity-50 backdrop-blur-sm ">
-          <div className="mb-40 w-[80vw] sm:w-[30vw] fleSM flex-col items-center gap-6">
+        <div className="w-full h-full absolute flex-end text bottom-10 top-0 bg-black text-white text-center mb-5 bg-opacity-50 backdrop-blur-sm ">
+          <div className="mb-40 w-[80vw] sm:w-[30vw] flex flex-col items-center gap-6">
             <div>
               <h2 className="text-3xl sm:text-5xl mb-4 font-extrabold logoFontFamily">Embark on a Journey</h2>
               <p className="logoFontFamily text-sm">Wrap yourself in a tapestry of dreams, where threads of culture, tradition, and style intertwine. Our clothing is more than just fabric; it's a journey through the mystique of Nepal.</p>
