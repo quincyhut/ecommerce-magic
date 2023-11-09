@@ -13,7 +13,7 @@ const ContextWrapper = ({ children }: any) => {
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <div className='py-1 px-4 w-full md:w-[75vw]'>
+                <div className='py-1 px-4 w-full xl:w-[75vw]'>
                     <Navbar />
                 </div>
                 <div className='px-0 sm:px-4 my-2'>{children}</div>

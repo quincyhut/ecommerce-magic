@@ -162,16 +162,16 @@ export default function Home() {
           <source src="/videos/banner.mp4" type="video/mp4" />
         </video>
         <div className="w-full h-full absolute flex-end text bottom-10 top-0 bg-black text-white text-center mb-5 bg-opacity-50 backdrop-blur-sm ">
-          <div className="mb-40 w-[80vw] sm:w-[30vw] flex flex-col items-center gap-6">
+          <div className="mb-40 px-5 w-full lg:w-[550px] md:w-[550px] flex flex-col items-center gap-6">
             <div>
-              <h2 className="text-3xl sm:text-5xl mb-4 font-extrabold logoFontFamily">Embark on a Journey</h2>
+              <h2 className="text-4xl sm:text-5xl mb-4 font-extrabold logoFontFamily">Embark on a Journey</h2>
               <p className="logoFontFamily text-sm">Wrap yourself in a tapestry of dreams, where threads of culture, tradition, and style intertwine. Our clothing is more than just fabric; it's a journey through the mystique of Nepal.</p>
             </div>
             <div className="flex-between gap-3">
-              <button className="shopBtn mt-3 text-white bg-black flex-center">
+              <button className="shopBtn mt-3 text-white bg-black flex-center text-sm">
                 SHOP NOW
               </button>
-              <button className="shopBtn mt-3 text-black bg-white flex-center">
+              <button className="shopBtn mt-3 text-black bg-white flex-center text-sm">
                 <FaRocket className='text-lg mr-4' />
                 EXPLORE US
               </button>
@@ -181,16 +181,16 @@ export default function Home() {
       </div>
 
       <div className="w-[100vw] flex-center">
-        <div className="py-1 px-4 w-full md:w-[75vw] flex-center">
+        <div className="py-1 px-4 w-full xl:w-[75vw] flex-center">
 
-          <div className="w-full mt-3 mb-4 flex-between gap-1">
+          <div className="w-full mt-3 mb-4 flex gap-1">
             {
               mockBottomBarContent?.map((d: any, i: number) => (
-                <div key={i} className="flex-start gap-4 sm:gap-5  p-4 w-full sm:flex-1">
+                <div key={i} className="flex flex-col flex-center sm:flex-start sm:flex-row gap-2 py-4 w-full">
                   {d?.icon}
                   <div>
                     <h3 className="text-md font-semibold">{d?.title}</h3>
-                    <span className="text-sm relative -top-1">{d?.subtitle}</span>
+                    <span className="text-sm relative -top-1 hidden sm:block">{d?.subtitle}</span>
                   </div>
                 </div>
 
@@ -217,9 +217,9 @@ export default function Home() {
       </div>
 
       <div className="w-[100vw] flex-center">
-        <div className="py-10 px-4 w-full md:w-[75vw]">
+        <div className="py-10 px-4 w-full xl:w-[75vw]">
           <h2 className="text-2xl mb-4 font-semibold logoFontFamily">Featured Collections</h2>
-          <div className="flex-between gap-5">
+          <div className="w-full flex-between gap-5">
             {
               mockProductLists?.map((d: IProductCards, i: number) => (
                 <ProductCards
