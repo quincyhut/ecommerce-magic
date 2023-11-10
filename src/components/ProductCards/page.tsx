@@ -19,28 +19,28 @@ const ProductCards = (details: IProductCards) => {
     } = useProductCard({ ...details });
 
     return (
-        <div className='w-full sm:w-fit text-center transition-all duration-500 transform hover:border hover:border-amber-900 group' onMouseOver={handleMouseOver} onMouseLeave={handleMouseOut} onClick={() => handleViewDetails(details)}>
-            <div className='h-[450px] sm:h-[350px] w-[100%] sm:w-[250px] overflow-hidden bg-slate-200'>
+        <div className='text-center transition-all duration-500 transform hover:border hover:border-amber-900 group overflow-hidden' onMouseOver={handleMouseOver} onMouseLeave={handleMouseOut} onClick={() => handleViewDetails(details)}>
+            <div className='h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] overflow-hidden bg-slate-200'>
                 <div className="relative w-full h-full">
                     <Image className='group-hover:scale-110 group-hover:opacity-[0.9] cursor-pointer transition-all duration-1000' src={activeCardImg} layout="fill" objectFit="cover" alt='helo' />
                     <MdOutlineArrowOutward className="text-2xl text-black absolute top-2 right-2 hidden group-hover:block" />
-                    <div className={`absolute top-2 left-2 w-fit flex-center gap-1 hover:bg-red-400 hover:text-white ${false ? 'bg-red-400 text-white' : 'bg-white '} drop-shadow-sm py-[2px] px-2 rounded-full text-slate-900 cursor-pointer hover:bg-zinc-200`}>
+                    <div className={`relative top-2 left-2 w-fit flex-center shadow-inner gap-1 hover:bg-black hover:text-white ${false ? 'bg-black text-white' : 'bg-white '} drop-shadow-sm px-[8px] py-[7px] rounded-full text-slate-600 cursor-pointer`}>
                         {
-                            false ? <AiFillHeart className='text-2xl' /> : <AiOutlineHeart className='text-2xl' />
+                            false ? <AiFillHeart className='text-5xl' /> : <AiOutlineHeart className='text-2xl' />
                         }
-                        {reactCount > 0 && <span className='text-[12px]'>{reactCount}</span>}
+                        {/* {reactCount > 0 && <span className='text-[12px] top-0 left-7 bg-white border shadow-lg text-black px-1 rounded-full absolute'>{reactCount}</span>} */}
                     </div>
                 </div>
             </div>
             <div className='flex-between px-2 pb-2'>
                 <div className='text-start'>
-                    <h2 className='mt-2 mb-1 font-semibold'>{title}</h2>
+                    <h2 className='w-[190px] truncate whitespace-nowrap mt-2 mb-1 font-semibold'>{title}</h2>
                     <div className='flex-start gap-2'>
                         <p className='text-sm text-slate-800'>NPR {price}</p>
                         <p className='text-sm text-red-600 line-through'>NPR {prevPrice}</p>
                     </div>
                 </div>
-                <div className={`mt-2 w-fit bg-white drop-shadow-md rounded-full p-[11px] cursor-pointer flex-center hover:bg-red-500 text-slate-700 hover:text-white ${hasAlreadyAddedToCart(details) ? 'bg-red-500 text-white' : ''}`} onClick={handleAddToCart}>
+                <div className={`hidden sm:flex mt-2 w-fit rounded-full p-[11px] cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart(details) ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={handleAddToCart}>
                     <BsCart2 className='text-xl' />
                 </div>
             </div>

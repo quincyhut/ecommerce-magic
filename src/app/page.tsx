@@ -56,24 +56,24 @@ export default function Home() {
 
   const mockBottomBarContent = [
     {
-      icon: <GrValidate className='text-4xl sm:flex-4xl' />,
+      icon: GrValidate,
       title: 'Certified',
       subtitle: 'Legally registered company'
     },
     {
-      icon: <HiCubeTransparent className='text-4xl' />,
+      icon: HiCubeTransparent,
       title: 'Transparent',
       subtitle: 'Hassle-free return policy'
     },
     {
-      icon: <FaShippingFast className='text-4xl' />,
+      icon: FaShippingFast,
       title: 'Shipping',
       subtitle: 'Free, fast, and reliable'
     },
     {
-      icon: <GrSecure className='text-4xl' />,
+      icon: GrSecure,
       title: 'Secure',
-      subtitle: 'Trusted marketplace since 2017'
+      subtitle: 'Trusted marketplace'
     },
   ];
 
@@ -146,7 +146,7 @@ export default function Home() {
       quantity: 142,
       prevPrice: 1523,
       reactCount: 15,
-      sizes: ['XL', 'SM', '2SML'],
+      sizes: ['XL', 'SM', '2XL'],
       colors: ['purple', 'red', 'blue'],
       images: ['/images/banner-3-b.webp', '/images/banner-4-b.webp'],
       userIds: ['hacker']
@@ -181,15 +181,15 @@ export default function Home() {
       </div>
 
       <div className="w-[100vw] flex-center">
-        <div className="py-1 px-4 w-full xl:w-[75vw] flex-center">
+        <div className="py-1 px-3 w-full xl:w-[75vw] flex-center">
 
           <div className="w-full mt-3 mb-4 flex gap-1">
             {
               mockBottomBarContent?.map((d: any, i: number) => (
-                <div key={i} className="flex flex-col flex-center sm:flex-start sm:flex-row gap-2 py-4 w-full">
-                  {d?.icon}
+                <div key={i} className={`flex border border-l-0 border-b-0 border-t-0 border-r-1 ${++i === mockBottomBarContent?.length ? 'border-r-0' : ''} bg-white flex-col flex-center sm:flex-start sm:flex-row gap-0 sm:gap-2 p sm:py-4 w-full`}>
+                  <d.icon  className='text-3xl sm:text-4xl' />
                   <div>
-                    <h3 className="text-md font-semibold">{d?.title}</h3>
+                    <h3 className="hidden sm:flex font-semibold">{d?.title}</h3>
                     <span className="text-sm relative -top-1 hidden sm:block">{d?.subtitle}</span>
                   </div>
                 </div>
@@ -219,7 +219,7 @@ export default function Home() {
       <div className="w-[100vw] flex-center">
         <div className="py-10 px-4 w-full xl:w-[75vw]">
           <h2 className="text-2xl mb-4 font-semibold logoFontFamily">Featured Collections</h2>
-          <div className="w-full flex-between gap-5">
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
             {
               mockProductLists?.map((d: IProductCards, i: number) => (
                 <ProductCards

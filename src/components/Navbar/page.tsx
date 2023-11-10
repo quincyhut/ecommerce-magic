@@ -24,7 +24,7 @@ const NavbarComp = () => {
 
   return (
     <>
-      <Navbar fluid rounded>
+      <Navbar fluid rounded className='px-0'>
         <div className="w-full flex-between">
           <div className="flex-center border-0 sm:border sm:border-slate-700">
             {isLoading ? <Spinner size='sm' className='ml-3 -mt-1' /> : <BiSearch className='ml-3 text-lg' />}

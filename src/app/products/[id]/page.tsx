@@ -79,7 +79,7 @@ const ProductPreview = () => {
                             <h2 className='text-md'>Quantity</h2>
                             <input type='number' min='1' max='5' className='w-[60px] hover:w-[70px] py-1 mt-2' value={quantity} onChange={handleQuantityChange} />
                         </>
-                        <div className='flex flex-col sm:flex-row gap-3 mt-10'>
+                        <div className='flex gap-3 mt-10'>
                             <button className='p-2 w-[150px] border border-black text-black text-sm' onClick={handleBuyProduct}>Buy Now</button>
                             <button className='p-2 w-[200px] text-white bg-black text-sm' onClick={!hasAlreadyAddedToCart && handleAddToCart}>{hasAlreadyAddedToCart ? "View Cart" : "Add to Cart"}</button>
                         </div>

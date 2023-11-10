@@ -58,7 +58,7 @@ const Womens = () => {
         <div className="w-[100vw] flex-center">
             <div className="py-10 px-7 w-full md:w-[75vw]">
                 <h2 className="text-2xl mb-4 font-semibold logoFontFamily">Womens Wear</h2>
-                <div className="flex-between gap-5">
+                <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
                     {
                         mockProductLists?.map((d, i: number) => (
                             <ProductCards

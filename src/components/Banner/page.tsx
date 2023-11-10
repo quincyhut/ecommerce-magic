@@ -8,7 +8,7 @@ import { IBanner } from './types';
 const Banner = ({ title, subtitle, btnText, offerContent, imgSrc1, imgSrc2 }: IBanner) => {
 
     return (
-        <div className={`px-0 h-[55vh] bg-white lg:bg-zinc-50 flex flex-col-reverse gap-1 md:gap-0 sm:gap-5 md:flex-col-reverse sm:flex-row lg:flex-row items-start md:justify-center md:items-start lg:justify-between lg:items-center sm:px-20 text-black`}>
+        <div className={`bg-white sm:bg-zinc-100 px-0 h-[600px] overflow-hidden flex flex-col-reverse gap-1 md:gap-0 sm:gap-5 md:flex-col-reverse sm:flex-row lg:flex-row items-start md:justify-center md:items-start lg:justify-between lg:items-center sm:px-20 text-black`}>
             <div>
                 <h1 className='mt-3'>{title}</h1>
                 <h3>{subtitle}</h3>
@@ -24,6 +24,9 @@ const Banner = ({ title, subtitle, btnText, offerContent, imgSrc1, imgSrc2 }: IB
                 </div>
                 <div className={`h-[400px] w-[250px] relative border border-dotted border-green-900 transform-0 sm:transform -translate-y-5`}>
                     <Image src={imgSrc2} layout="fill" objectFit="cover" alt='helo' className="p-1" />
+                </div>
+                <div className="hidden sm:block h-[400px] w-[100vw] sm:w-[250px] relative border border-dotted border-green-900 transform-0 sm:transform sm:translate-y-5">
+                    <Image src={imgSrc1} layout="fill" objectFit="cover" alt='helo' className="p-1" />
                 </div>
             </div>
         </div>
