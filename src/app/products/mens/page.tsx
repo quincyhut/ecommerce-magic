@@ -5,7 +5,6 @@ import ProductCards from '@/components/ProductCards/page';
 import useMens from './useMens';
 
 const Mens = () => {
-
     const {
         mockProductLists,
         breadcrumbLinks,

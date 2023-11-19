@@ -164,7 +164,7 @@ export default function Home() {
         <div className="w-full h-full absolute flex-end text bottom-10 top-0 bg-black text-white text-center mb-5 bg-opacity-50 backdrop-blur-sm ">
           <div className="mb-40 px-5 w-full lg:w-[550px] md:w-[550px] flex flex-col items-center gap-6">
             <div>
-              <h2 className="text-4xl sm:text-5xl mb-4 font-extrabold logoFontFamily">Embark on a Journey</h2>
+              <h2 className="text-3xl sm:text-5xl mb-4 font-extrabold logoFontFamily">Embark on a Journey</h2>
               <p className="logoFontFamily text-sm">Wrap yourself in a tapestry of dreams, where threads of culture, tradition, and style intertwine. Our clothing is more than just fabric; it's a journey through the mystique of Nepal.</p>
             </div>
             <div className="flex-between gap-3">
@@ -187,7 +187,7 @@ export default function Home() {
             {
               mockBottomBarContent?.map((d: any, i: number) => (
                 <div key={i} className={`flex border border-l-0 border-b-0 border-t-0 border-r-1 ${++i === mockBottomBarContent?.length ? 'border-r-0' : ''} bg-white flex-col flex-center sm:flex-start sm:flex-row gap-0 sm:gap-2 p sm:py-4 w-full`}>
-                  <d.icon  className='text-3xl sm:text-4xl' />
+                  <d.icon className='text-3xl sm:text-4xl' />
                   <div>
                     <h3 className="hidden sm:flex font-semibold">{d?.title}</h3>
                     <span className="text-sm relative -top-1 hidden sm:block">{d?.subtitle}</span>
