@@ -52,23 +52,13 @@ const mockProductLists: any[] = [
     },
 ];
 
-const useMens = () => {
-    const [productLists, setProductLists] = useState([...mockProductLists]);
 
-    const breadcrumbLinks = [
-        { title: 'Home', href: '/' },
-        { title: 'Mens', href: '/products/mens' }
-    ];
-
-    const handleSorting = () => {
-
-    }
+const useLovedProducts = () => {
+    const [lovedProducts, setLovedProducts] = useState(mockProductLists);
 
     return {
-        productLists,
-        breadcrumbLinks,
-        handleSorting,
+        lovedProducts
     }
 }
 
-export default useMens;
+export default useLovedProducts;

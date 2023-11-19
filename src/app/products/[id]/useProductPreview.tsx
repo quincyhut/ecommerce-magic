@@ -1,13 +1,18 @@
-import { IProductCards } from "@/components/ProductCards/types";
 import { useCart } from "@/lib/hooks";
 import { setCartData } from "@/redux/reducers/productReducer";
 import _ from "lodash";
-import { KeyboardEvent, useCallback, useMemo, useState } from "react";
+import { KeyboardEvent, useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 
 export const useProductPreview = () => {
     const { previewProduct } = useSelector((state: any) => state.productReducer);
+    const breadcrumbLinks = [
+        { title: 'Home', href: '/' },
+        { title: 'Mens', href: '/products/mens' },
+        { title: previewProduct?.title, href: '' }
+    ];
+
 
     const dispatch = useDispatch();
     const { hasAlreadyAddedToCart } = useCart();
@@ -61,8 +66,9 @@ export const useProductPreview = () => {
 
     return {
         ...selectedProduct,
-        hasAlreadyAddedToCart,
         activeImage,
+        breadcrumbLinks,
+        hasAlreadyAddedToCart,
         handleSwitchImage,
         handleQuantityChange,
         handlePickSize,

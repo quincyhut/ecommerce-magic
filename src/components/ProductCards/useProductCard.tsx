@@ -32,8 +32,14 @@ export const useProductCard = ({ images }: any) => {
         router.push(`/products/${details?._id}`, { scroll: false });
     }, []);
 
-    const handleAddToCart = useCallback(() => {
+    const handleAddToCart = useCallback((e: React.MouseEvent<HTMLElement>) => {
+        e.stopPropagation();
 
+    }, []);
+
+
+    const handleDeleteCart = useCallback((e: React.MouseEvent<HTMLElement>) => {
+        e.stopPropagation();
     }, []);
 
     return {
@@ -44,5 +50,6 @@ export const useProductCard = ({ images }: any) => {
         handleLoveReact,
         handleViewDetails,
         handleAddToCart,
+        handleDeleteCart,
     }
 }

@@ -234,6 +234,7 @@ export default function Home() {
                   reactCount={d?.reactCount}
                   images={d?.images}
                   userIds={d?.userIds}
+                  allowLoveReact={true}
                 />
               ))
             }

@@ -1,14 +1,14 @@
 "use client";
 
 import Image from 'next/image';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { AiOutlineHeart, AiFillHeart, AiFillDelete } from 'react-icons/ai';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { IProductCards } from './types';
 import { useProductCard } from './useProductCard';
 import { BsCart2 } from 'react-icons/bs';
 
 const ProductCards = (details: IProductCards) => {
-    const { title, price, prevPrice, reactCount = 0 } = details;
+    const { title, price, prevPrice, allowLoveReact, allowDelete = false } = details;
     const {
         activeCardImg,
         hasAlreadyAddedToCart,
@@ -16,6 +16,7 @@ const ProductCards = (details: IProductCards) => {
         handleMouseOver,
         handleViewDetails,
         handleAddToCart,
+        handleDeleteCart,
     } = useProductCard({ ...details });
 
     return (
@@ -24,11 +25,22 @@ const ProductCards = (details: IProductCards) => {
                 <div className="relative w-full h-full">
                     <Image className='group-hover:scale-110 group-hover:opacity-[0.9] cursor-pointer transition-all duration-1000' src={activeCardImg} layout="fill" objectFit="cover" alt='helo' />
                     <MdOutlineArrowOutward className="text-2xl text-black absolute top-2 right-2 hidden group-hover:block" />
-                    <div className={`relative top-2 left-2 w-fit flex-center shadow-inner gap-1 hover:bg-black hover:text-white ${false ? 'bg-black text-white' : 'bg-white '} drop-shadow-sm px-[8px] py-[7px] rounded-full text-slate-600 cursor-pointer`}>
+                    <div className='flex'>
                         {
-                            false ? <AiFillHeart className='text-5xl' /> : <AiOutlineHeart className='text-2xl' />
+                            allowLoveReact && (
+                                <div className={`relative top-2 left-2 w-fit flex-center shadow-inner gap-1 hover:bg-black hover:text-white ${false ? 'bg-black text-white' : 'bg-white '} drop-shadow-sm px-[8px] py-[7px] rounded-full text-slate-600 cursor-pointer`}>
+                                    {false ? <AiFillHeart className='text-5xl' /> : <AiOutlineHeart className='text-2xl' />}
+                                </div>
+                            )
                         }
-                        {/* {reactCount > 0 && <span className='text-[12px] top-0 left-7 bg-white border shadow-lg text-black px-1 rounded-full absolute'>{reactCount}</span>} */}
+                        {
+                            allowDelete &&
+                            (
+                                <div className='bg-white p-3 relative w-fit rounded-full top-2 left-4 cursor-pointer' onClick={handleDeleteCart}>
+                                    <AiFillDelete className='text-md text-slate-600' />
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>
@@ -40,7 +52,7 @@ const ProductCards = (details: IProductCards) => {
                         <p className='text-sm text-red-600 line-through'>NPR {prevPrice}</p>
                     </div>
                 </div>
-                <div className={`hidden sm:flex mt-2 w-fit rounded-full p-[11px] cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart(details) ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={handleAddToCart}>
+                <div className={`flex mt-2 w-fit rounded-full p-[9px] cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart(details) ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={handleAddToCart}>
                     <BsCart2 className='text-xl' />
                 </div>
             </div>

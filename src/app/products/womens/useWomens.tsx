@@ -52,12 +52,12 @@ const mockProductLists: any[] = [
     },
 ];
 
-const useMens = () => {
+const useWomens = () => {
     const [productLists, setProductLists] = useState([...mockProductLists]);
 
     const breadcrumbLinks = [
         { title: 'Home', href: '/' },
-        { title: 'Mens', href: '/products/mens' }
+        { title: 'Womens', href: '/products/womens' }
     ];
 
     const handleSorting = () => {
@@ -71,4 +71,4 @@ const useMens = () => {
     }
 }
 
-export default useMens;
+export default useWomens;

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { useSelector } from "react-redux";
 
 const mockProductLists: any[] = [
     {
@@ -52,23 +53,29 @@ const mockProductLists: any[] = [
     },
 ];
 
-const useMens = () => {
-    const [productLists, setProductLists] = useState([...mockProductLists]);
 
-    const breadcrumbLinks = [
-        { title: 'Home', href: '/' },
-        { title: 'Mens', href: '/products/mens' }
-    ];
+const useCartProduct = () => {
+    const { cart } = useSelector((state: any) => state.productReducer);
+    const [lovedProducts, setLovedProducts] = useState(cart);
 
-    const handleSorting = () => {
+    const handleQuantityChange = useCallback(() => {
 
-    }
+    }, []);
+
+    const handlePickColor = useCallback((color: string) => {
+
+    }, []);
+
+    const handlePickSize = useCallback((color: string) => {
+
+    }, []);
 
     return {
-        productLists,
-        breadcrumbLinks,
-        handleSorting,
+        lovedProducts,
+        handleQuantityChange,
+        handlePickColor,
+        handlePickSize
     }
 }
 
-export default useMens;
+export default useCartProduct;

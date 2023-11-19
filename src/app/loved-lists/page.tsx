@@ -1,23 +1,21 @@
 'use client';
 
-import ProductBreadcumb from '@/components/ProductBreadcumb/page';
+import React from 'react';
+import useLovedProducts from './useLovedLists'
 import ProductCards from '@/components/ProductCards/page';
-import useMens from './useMens';
 
-const Mens = () => {
+const LovedLists = () => {
     const {
-        productLists,
-        breadcrumbLinks,
-        handleSorting,
-    } = useMens();
+        lovedProducts
+    } = useLovedProducts();
 
     return (
         <div className="w-[100vw] flex-center">
             <div className="py-10 px-4 w-full md:w-[75vw]">
-                <ProductBreadcumb links={breadcrumbLinks} handleSorting={handleSorting} />
+
                 <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
                     {
-                        productLists?.map((d, i: number) => (
+                        lovedProducts?.map((d, i: number) => (
                             <ProductCards
                                 key={i}
                                 _id={d?._id}
@@ -30,7 +28,8 @@ const Mens = () => {
                                 reactCount={d?.reactCount}
                                 images={d?.images}
                                 userIds={d?.userIds}
-                                allowLoveReact={true}
+                                allowDelete={true}
+                                allowLoveReact={false}
                             />
                         ))
                     }
@@ -40,4 +39,4 @@ const Mens = () => {
     )
 }
 
-export default Mens;
+export default LovedLists

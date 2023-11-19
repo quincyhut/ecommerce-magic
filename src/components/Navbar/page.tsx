@@ -5,7 +5,7 @@ import { Avatar, Badge, Dropdown, Navbar, Spinner } from "flowbite-react";
 
 import { MdFavoriteBorder, MdOutlineLogout, MdOutlineManageAccounts } from "react-icons/md";
 import { BiPurchaseTag, BiRightArrowAlt, BiSearch } from "react-icons/bi";
-import { LiaShoppingBagSolid } from "react-icons/lia";
+import { LiaHeart, LiaShoppingBagSolid } from "react-icons/lia";
 import { BsFacebook, BsInstagram, BsTiktok } from "react-icons/bs";
 
 import MenuCard from "../MenuCard/page";
@@ -19,7 +19,9 @@ const NavbarComp = () => {
     totalCartCount,
     isLoading,
     searchKeyword,
-    handleSearch
+    handleSearch,
+    handleRedirectToLovedLists,
+    handleRedirectToCartLists
   } = useNavbar();
 
   return (
@@ -45,7 +47,10 @@ const NavbarComp = () => {
           <Image src='/icons/logo.png' height={130} width={130} alt='logo' />
         </Navbar.Brand>
         <div className="flex md:order-2 items-center">
-          <Badge color='white' className='mx-3 relative cursor-pointer'>
+          <Badge color='white' className='relative cursor-pointer' onClick={handleRedirectToLovedLists}>
+            <LiaHeart className='text-4xl' />
+          </Badge>
+          <Badge color='white' className='mr-3 relative cursor-pointer' onClick={handleRedirectToCartLists}>
             <LiaShoppingBagSolid className='text-4xl' />
             <span className='absolute right-[42%] top-[43%]'>{totalCartCount}</span>
           </Badge>

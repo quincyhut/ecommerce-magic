@@ -9,4 +9,6 @@ export interface IProductCards {
     prevPrice?: number;
     reactCount?: number;
     userIds?: string[];
+    allowLoveReact?: boolean;
+    allowDelete?: boolean;
 }
