@@ -7,7 +7,7 @@ const ProductBreadcumb = ({ links, handleSorting}: ProductBreadCrumb) => {
             <div className='flex-between logoFontFamily bg-zinc-50 px-5 py-4 mb-5'>
                 <Breadcrumb aria-label="Default breadcrumb example">
                     {
-                        links?.map((d:Links, i:number) => <Breadcrumb.Item href={d?.href}>{d?.title}</Breadcrumb.Item>)
+                        links?.map((d:Links, i:number) => <Breadcrumb.Item key={i} href={d?.href}>{d?.title}</Breadcrumb.Item>)
                     }
                 </Breadcrumb>
                 <Dropdown label="Filter" inline className=' w-[200px]' onClick={handleSorting}>
