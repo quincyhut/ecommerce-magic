@@ -24,7 +24,7 @@ const CartLists = () => {
 
                             {
                                 lovedProducts?.map((product: any, index: number) => (
-                                    <div className="flex flex-col rounded-lg gap-5 sm:flex-row">
+                                    <div key={index} className="flex flex-col rounded-lg gap-5 sm:flex-row">
                                         <div className='relative h-[90px] w-[90px]'>
                                             <Image src={product?.images?.[0]} layout='fill' objectFit='cover' alt="" />
                                         </div>
