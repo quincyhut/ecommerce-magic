@@ -75,7 +75,7 @@ const ProductPreview = () => {
                         </>
                         <div className='flex gap-3 mt-10'>
                             <button className='p-2 w-[150px] border border-black text-black text-sm' onClick={handleBuyProduct}>Buy Now</button>
-                            <button className='p-2 w-[200px] text-white bg-black text-sm' onClick={() => handleAddToCart(selectedProduct)}>{hasAlreadyAddedToCart ? "View Cart" : "Add to Cart"}</button>
+                            <button className='p-2 w-[200px] text-white bg-black text-sm' onClick={(e) => handleAddToCart(e, selectedProduct)}>{hasAlreadyAddedToCart ? "View Cart" : "Add to Cart"}</button>
                         </div>
                     </div>
                 </div>
