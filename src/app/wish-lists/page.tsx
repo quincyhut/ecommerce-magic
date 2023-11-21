@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import useLovedProducts from './useLovedLists'
+import useLovedProducts from './useLovedLists';
 import ProductCards from '@/components/ProductCards/page';
 
 const LovedLists = () => {
@@ -11,7 +11,7 @@ const LovedLists = () => {
 
     return (
         <div className="w-[100vw] flex-center">
-            <div className="py-10 px-4 w-full md:w-[75vw]">
+            <div className="py-10 pl-4 pr-5 sm:px-8 w-full lg:w-[75vw]">
 
                 <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
                     {

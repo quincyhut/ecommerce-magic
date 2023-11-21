@@ -55,7 +55,9 @@ export const useProductCard = (product: any) => {
         e.stopPropagation();
     }, []);
 
-    const handleDeleteWishlist = useCallback(() => {
+    const handleDeleteWishlist = useCallback((e: React.MouseEvent<HTMLElement>) => {
+        e.stopPropagation();
+        
         dispatch(removeWishListById(product?._id));
     }, [wishlist]);
 

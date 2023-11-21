@@ -31,7 +31,7 @@ const ProductCards = (details: IProductCards) => {
                     <div className='relative p-2 flex gap-3'>
                         {
                             allowLoveReact && (
-                                <div className={`w-fit flex-center shadow-inner gap-1 hover:bg-black hover:text-white ${false ? 'bg-black text-white' : 'bg-white '} drop-shadow-sm px-[8px] py-[7px] rounded-full text-slate-600 cursor-pointer`} onClick={handleAddToWishList}>
+                                <div className={`w-fit flex-center shadow-inner gap-1 hover:bg-black hover:text-white  bg-white ${hasAlreadyLoved ? 'text-red-500' : ''} drop-shadow-lg px-[8px] py-[7px] rounded-full cursor-pointer`} onClick={handleAddToWishList}>
                                     {hasAlreadyLoved ? <AiFillHeart className='text-2xl' /> : <AiOutlineHeart className='text-2xl' />}
                                 </div>
                             )
