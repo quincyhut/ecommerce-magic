@@ -43,11 +43,13 @@ const NavbarComp = () => {
         <div className='separator'></div>
       </Navbar>
       <Navbar fluid rounded className='p-0'>
-        <Navbar.Brand href="/">
-          <Image src='/icons/logo.png' height={130} width={130} alt='logo' />
+        <Navbar.Brand>
+          <Link href="/">
+            <Image src='/icons/logo.png' height={130} width={130} alt='logo' />
+          </Link>
         </Navbar.Brand>
         <div className="flex md:order-2 items-center">
-          <Badge color='white' className='relative cursor-pointer' onClick={handleRedirectToLovedLists}>
+          <Badge color='white' className='relative cursor-pointer hidden sm:flex' onClick={handleRedirectToLovedLists}>
             <LiaHeart className='text-4xl' />
           </Badge>
           <Badge color='white' className='mr-3 relative cursor-pointer' onClick={handleRedirectToCartLists}>
@@ -66,7 +68,11 @@ const NavbarComp = () => {
             </Dropdown.Header>
             <Dropdown.Item><MdOutlineManageAccounts className='text-xl mr-3' /> Manage Account</Dropdown.Item>
             <Dropdown.Item><BiPurchaseTag className='text-xl mr-3' /> My Orders</Dropdown.Item>
-            <Dropdown.Item><MdFavoriteBorder className='text-xl mr-3' />My Wishlist</Dropdown.Item>
+            <Dropdown.Item>
+              <Link href='/wish-lists' className='flex'>
+                <MdFavoriteBorder className='text-xl mr-3' />My Wishlist
+              </Link>
+            </Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item><MdOutlineLogout className='text-xl mr-3' /> Sign out</Dropdown.Item>
           </Dropdown>

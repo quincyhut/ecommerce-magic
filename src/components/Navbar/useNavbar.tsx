@@ -19,7 +19,7 @@ export const useNavbar = () => {
     }, [setKeyword]);
 
     const handleRedirectToLovedLists = () => {
-        router.push("/loved-lists");
+        router.push("/wish-lists");
     }
 
     const handleRedirectToCartLists = () => {

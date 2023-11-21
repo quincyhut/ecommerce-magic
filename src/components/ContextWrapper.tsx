@@ -4,8 +4,9 @@ import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { persistor, store } from "@/redux/store";
+import { persistStore } from 'redux-persist';
 
+import { persistor, store } from '@/redux/store';
 import Navbar from '@/components/Navbar/page';
 import Footer from '@/components/Footer/page';
 

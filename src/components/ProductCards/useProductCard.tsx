@@ -1,26 +1,33 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 
-import { setPreviewProduct } from "@/redux/reducers/productReducer";
+import { removeWishListById, setCartData, setPreviewProduct, setWishList } from "@/redux/reducers/productReducer";
 import { useCart } from "@/lib/hooks";
+import { ProductReducer } from "@/lib/types";
+import { useSelector } from "react-redux";
 
+export const useProductCard = (product: any) => {
+    const [activeCardImg, setActiveCardImgUrl] = useState(product?.images[0]);
 
-export const useProductCard = ({ images }: any) => {
-    const [activeCardImg, setActiveCardImgUrl] = useState(images[0]);
     const { hasAlreadyAddedToCart } = useCart();
+    const { wishlist } = useSelector((state: ProductReducer) => state.productReducer);
 
     const router = useRouter();
     const dispatch = useDispatch();
 
+    const hasAlreadyLoved = useMemo(() => {
+        return wishlist?.some(list => list._id === product?._id) ?? false;
+    }, [wishlist]);
+
     const handleMouseOver = useCallback(() => {
-        setActiveCardImgUrl(images[1])
+        setActiveCardImgUrl(product?.images[1])
     }, [activeCardImg]);
 
     const handleMouseOut = useCallback(() => {
-        setActiveCardImgUrl(images[0])
+        setActiveCardImgUrl(product?.images[0])
     }, [activeCardImg]);
 
     const handleLoveReact = useCallback(() => {
@@ -35,21 +42,34 @@ export const useProductCard = ({ images }: any) => {
     const handleAddToCart = useCallback((e: React.MouseEvent<HTMLElement>) => {
         e.stopPropagation();
 
+        dispatch(setCartData(product));
     }, []);
 
+    const handleAddToWishList = useCallback((e: React.MouseEvent<HTMLElement>) => {
+        e.stopPropagation();
+
+        dispatch(setWishList(product));
+    }, [wishlist]);
 
     const handleDeleteCart = useCallback((e: React.MouseEvent<HTMLElement>) => {
         e.stopPropagation();
     }, []);
 
+    const handleDeleteWishlist = useCallback(() => {
+        dispatch(removeWishListById(product?._id));
+    }, [wishlist]);
+
     return {
         hasAlreadyAddedToCart,
+        hasAlreadyLoved,
         activeCardImg,
         handleMouseOver,
         handleMouseOut,
         handleLoveReact,
         handleViewDetails,
         handleAddToCart,
+        handleAddToWishList,
         handleDeleteCart,
+        handleDeleteWishlist,
     }
 }
