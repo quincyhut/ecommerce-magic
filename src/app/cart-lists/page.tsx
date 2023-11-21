@@ -1,16 +1,14 @@
 'use client';
 
 import React from 'react';
-import useCart from './useCart'
+import { useCart } from '../../lib/hooks';
 import Image from 'next/image';
 import { AiOutlineDelete } from 'react-icons/ai';
 
 const CartLists = () => {
     const {
-        lovedProducts,
-        handleQuantityChange,
-        handlePickColor,
-        handlePickSize
+        cartLists,
+        handleDeleteCartProduct,
     } = useCart();
 
     return (
@@ -23,17 +21,17 @@ const CartLists = () => {
                         <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
 
                             {
-                                lovedProducts?.map((product: any, index: number) => (
+                                cartLists?.map((product: any, index: number) => (
                                     <div key={index} className="flex flex-col rounded-lg gap-5 sm:flex-row">
                                         <div className='relative h-[90px] w-[90px]'>
                                             <Image src={product?.images?.[0]} layout='fill' objectFit='cover' alt="" />
                                         </div>
                                         <div className="flex w-full flex-col">
                                             <span className="font-semibold">{product?.title}</span>
-                                            <p className="text-sm">Qty: {product?.quantity}</p>
-                                            <p className="text-sm font-semibold">NPR {product?.price}</p>
+                                            <p className="text-sm my-1">Qty: {product?.quantity}</p>
+                                            <p className="text-sm">Rs. {product?.price}</p>
                                         </div>
-                                        <AiOutlineDelete className='text-xl cursor-pointer hover:opacity-40' />
+                                        <AiOutlineDelete className='text-2xl cursor-pointer hover:opacity-40' onClick={() => handleDeleteCartProduct(product?._id)} />
                                     </div>
                                 ))
                             }

@@ -16,7 +16,7 @@ import Image from 'next/image';
 
 const NavbarComp = () => {
   const {
-    totalCartCount,
+    totalCart,
     isLoading,
     searchKeyword,
     handleSearch,
@@ -54,7 +54,7 @@ const NavbarComp = () => {
           </Badge>
           <Badge color='white' className='mr-3 relative cursor-pointer' onClick={handleRedirectToCartLists}>
             <LiaShoppingBagSolid className='text-4xl' />
-            <span className='absolute right-[42%] top-[43%]'>{totalCartCount}</span>
+            <span className='absolute right-[42%] top-[43%]'>{totalCart}</span>
           </Badge>
           <Dropdown
             arrowIcon={false}

@@ -1,21 +1,16 @@
+import { IProductCards } from "@/components/ProductCards/types";
 import { useCart } from "@/lib/hooks";
-import { setCartData } from "@/redux/reducers/productReducer";
 import _ from "lodash";
-import { KeyboardEvent, useCallback, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { KeyboardEvent, useCallback, useMemo, useState } from "react";
 
 
 export const useProductPreview = () => {
-    const { previewProduct } = useSelector((state: any) => state.productReducer);
+    const { previewProduct, cartLists, handleAddToCart} = useCart();
     const breadcrumbLinks = [
         { title: 'Home', href: '/' },
         { title: 'Mens', href: '/products/mens' },
         { title: previewProduct?.title, href: '' }
     ];
-
-
-    const dispatch = useDispatch();
-    const { hasAlreadyAddedToCart } = useCart();
 
     const [selectedProduct, setSelectedProduct] = useState({
         ...previewProduct ?? {},
@@ -25,12 +20,15 @@ export const useProductPreview = () => {
     });
     const [activeImage, setActiveImage] = useState(selectedProduct?.images?.[0]);
 
+    const hasAlreadyAddedToCart = useMemo(() => {
+        return cartLists?.some((product: IProductCards) => product._id === selectedProduct?._id);
+    }, [cartLists, previewProduct]);
 
     const handleSwitchImage = useCallback((src: string) => {
         setActiveImage(src);
     }, [activeImage]);
 
-    const handleQuantityChange = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
+    const handleQuantityChange = useCallback((e: any) => {
         const { value }: any = e.target;
 
         if (value?.length > 2) return;
@@ -60,12 +58,12 @@ export const useProductPreview = () => {
         console.log({ selectedProduct })
     }, [selectedProduct]);
 
-    const handleAddToCart = useCallback(() => {
-        if (!hasAlreadyAddedToCart(selectedProduct)) dispatch(setCartData(selectedProduct));
-    }, [selectedProduct]);
+    const handleSorting = () => {
 
+    }
+    
     return {
-        ...selectedProduct,
+        selectedProduct,
         activeImage,
         breadcrumbLinks,
         hasAlreadyAddedToCart,
@@ -74,6 +72,7 @@ export const useProductPreview = () => {
         handlePickSize,
         handlePickColor,
         handleBuyProduct,
-        handleAddToCart
+        handleAddToCart,
+        handleSorting
     }
 }

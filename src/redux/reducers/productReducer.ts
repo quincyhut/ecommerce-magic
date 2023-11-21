@@ -24,12 +24,15 @@ const product = createSlice({
                 wishlist: _.uniqBy([...state.wishlist ?? [], action.payload], '_id')
             }
         },
+        removeCartById: (state: any, action: any) => {
+            state.cart = state.cart?.filter((list: any) => list._id !== action.payload);
+        },
         removeWishListById: (state: any, action: any) => {
             state.wishlist = state.wishlist?.filter((list: any) => list._id !== action.payload);
         },
     }
 });
 
-export const { setPreviewProduct, setCartData, setWishList, removeWishListById } = product.actions;
+export const { setPreviewProduct, setCartData, setWishList, removeCartById, removeWishListById } = product.actions;
 export default product.reducer;
 

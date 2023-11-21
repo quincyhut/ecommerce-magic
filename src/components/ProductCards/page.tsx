@@ -18,7 +18,6 @@ const ProductCards = (details: IProductCards) => {
         handleViewDetails,
         handleAddToCart,
         handleAddToWishList,
-        handleDeleteCart,
         handleDeleteWishlist,
     } = useProductCard({ ...details });
 
@@ -31,7 +30,7 @@ const ProductCards = (details: IProductCards) => {
                     <div className='relative p-2 flex gap-3'>
                         {
                             allowLoveReact && (
-                                <div className={`w-fit flex-center shadow-inner gap-1 hover:bg-black hover:text-white  bg-white ${hasAlreadyLoved ? 'text-red-500' : ''} drop-shadow-lg px-[8px] py-[7px] rounded-full cursor-pointer`} onClick={handleAddToWishList}>
+                                <div className={`w-fit flex-center shadow-inner gap-1 hover:bg-black hover:text-white  bg-white ${hasAlreadyLoved ? 'text-red-500' : ''} drop-shadow-lg px-[8px] py-[7px] rounded-full cursor-pointer`} onClick={(e) => handleAddToWishList(e, details)}>
                                     {hasAlreadyLoved ? <AiFillHeart className='text-2xl' /> : <AiOutlineHeart className='text-2xl' />}
                                 </div>
                             )
@@ -39,12 +38,12 @@ const ProductCards = (details: IProductCards) => {
                         {
                            allowDelete &&
                             (
-                                <div className='bg-white p-3 rounded-full cursor-pointer hover:opacity-80' onClick={handleDeleteWishlist}>
+                                <div className='bg-white p-3 rounded-full cursor-pointer hover:opacity-80' onClick={(e) => handleDeleteWishlist(e, details?._id)}>
                                     <AiFillDelete className='text-lg text-slate-600' />
                                 </div>
                             )
                         }
-                        <div className={`flex xl:hidden w-fit rounded-full p-3 cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart(details) ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={handleAddToCart}>
+                        <div className={`flex xl:hidden w-fit rounded-full p-3 cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={(e) => handleAddToCart(e, details)}>
                             <BsCart2 className='text-lg' />
                         </div>
                     </div>
@@ -58,7 +57,7 @@ const ProductCards = (details: IProductCards) => {
                         <p className='text-sm text-red-600 line-through'>NPR {prevPrice}</p>
                     </div>
                 </div>
-                <div className={`hidden xl:flex mt-2 w-fit rounded-full p-[9px] cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart(details) ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={handleAddToCart}>
+                <div className={`hidden xl:flex mt-2 w-fit rounded-full p-[9px] cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={(e) => handleAddToCart(e, details)}>
                     <BsCart2 className='text-xl' />
                 </div>
             </div>

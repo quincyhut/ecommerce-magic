@@ -8,7 +8,7 @@ export const useNavbar = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [searchKeyword, setKeyword] = useState<string | null>(null);
 
-    const { totalCartCount } = useCart();
+    const { totalCart } = useCart();
     const router = useRouter();
 
     const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +26,7 @@ export const useNavbar = () => {
         router.push("/cart-lists");
     }
     return {
-        totalCartCount,
+        totalCart,
         searchKeyword,
         isLoading,
         handleSearch,

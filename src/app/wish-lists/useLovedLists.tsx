@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
-import { ProductReducer } from "@/lib/types";
+import { useCart } from "@/lib/hooks";
 
 const useLovedProducts = () => {
-    const { wishlist } = useSelector((state: ProductReducer) => state.productReducer);
-    const [lovedProducts, setLovedProducts] = useState(wishlist);
+    const { wishList } = useCart();
+    const [lovedProducts, setLovedProducts] = useState([]);
 
     useEffect(() => {
-        setLovedProducts(wishlist ?? []);
-    }, [wishlist])
+        setLovedProducts(wishList ?? []);
+    }, [wishList])
 
     return {
         lovedProducts,

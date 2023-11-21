@@ -3,6 +3,7 @@
 import React from 'react';
 import useLovedProducts from './useLovedLists';
 import ProductCards from '@/components/ProductCards/page';
+import { IProductCards } from '@/components/ProductCards/types';
 
 const LovedLists = () => {
     const {
@@ -15,7 +16,7 @@ const LovedLists = () => {
 
                 <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
                     {
-                        lovedProducts?.map((d, i: number) => (
+                        lovedProducts?.map((d:IProductCards, i: number) => (
                             <ProductCards
                                 key={i}
                                 _id={d?._id}

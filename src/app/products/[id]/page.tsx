@@ -10,16 +10,7 @@ const ProductPreview = () => {
     const {
         hasAlreadyAddedToCart,
         activeImage,
-        title,
-        price,
-        quantity,
-        prevPrice,
-        images,
-        colors,
-        pickColor,
-        sizes,
-        pickSize,
-        reactCount,
+        selectedProduct,
         breadcrumbLinks,
         handleSorting,
         handleSwitchImage,
@@ -41,7 +32,7 @@ const ProductPreview = () => {
                         </div>
                         <div className="flex gap-3 px-1 mt-2">
                             {
-                                images?.map((src: string, index: number) => (
+                                selectedProduct?.images?.map((src: string, index: number) => (
                                     <Image
                                         key={index}
                                         src={src}
@@ -56,16 +47,16 @@ const ProductPreview = () => {
                         </div>
                     </div>
                     <div className='w-full sm:w-1/2 p-0 sm:p-10 mt-5 sm:mt-0'>
-                        <h2 className='text-2xl font-semibold'>{title}</h2>
+                        <h2 className='text-2xl font-semibold'>{selectedProduct?.title}</h2>
                         <div className='flex gap-3 mt-2'>
-                            <h3>NPR {price}</h3>
-                            {prevPrice && <h3 className='text-red-500 line-through'>NPR {prevPrice}</h3>}
+                            <h3>NPR {selectedProduct?.price}</h3>
+                            {selectedProduct?.prevPrice && <h3 className='text-red-500 line-through'>NPR {selectedProduct?.prevPrice}</h3>}
                         </div>
                         <div className='my-5'>
                             <h2 className='text-md'>Size</h2>
                             <div className='mt-2 flex gap-3'>
                                 {
-                                    sizes?.map((size: string, i: number) => <div key={i} className={`h-8 w-8 flex-center rounded-full cursor-pointer border border-black text-sm hover:bg-black hover:text-white ${pickSize?.includes(size) ? 'bg-black text-white' : ''}`} onClick={() => handlePickSize(size)}>{size}</div>)
+                                    selectedProduct?.sizes?.map((size: string, i: number) => <div key={i} className={`h-8 w-8 flex-center rounded-full cursor-pointer border border-black text-sm hover:bg-black hover:text-white ${selectedProduct?.pickSize?.includes(size) ? 'bg-black text-white' : ''}`} onClick={() => handlePickSize(size)}>{size}</div>)
                                 }
 
                             </div>
@@ -74,17 +65,17 @@ const ProductPreview = () => {
                             <h2 className='text-md'>Colors</h2>
                             <div className='mt-2 flex gap-3'>
                                 {
-                                    colors?.map((color: string, i: number) => <div key={i} className={`h-7 w-7 rounded-full cursor-pointer text-white flex-center border`} style={{ backgroundColor: color }} onClick={() => handlePickColor(color)}>{pickColor?.includes(color) ? <BiCheck className='text-xl' /> : ''}</div>)
+                                    selectedProduct?.colors?.map((color: string, i: number) => <div key={i} className={`h-7 w-7 rounded-full cursor-pointer text-white flex-center border`} style={{ backgroundColor: color }} onClick={() => handlePickColor(color)}>{selectedProduct?.pickColor?.includes(color) ? <BiCheck className='text-xl' /> : ''}</div>)
                                 }
                             </div>
                         </div>
                         <>
                             <h2 className='text-md'>Quantity</h2>
-                            <input type='number' min='1' max='5' className='w-[60px] hover:w-[70px] py-1 mt-2' value={quantity} onChange={handleQuantityChange} />
+                            <input type='number' min='1' max='5' className='w-[60px] hover:w-[70px] py-1 mt-2' value={selectedProduct?.quantity} onChange={handleQuantityChange} />
                         </>
                         <div className='flex gap-3 mt-10'>
                             <button className='p-2 w-[150px] border border-black text-black text-sm' onClick={handleBuyProduct}>Buy Now</button>
-                            <button className='p-2 w-[200px] text-white bg-black text-sm' onClick={!hasAlreadyAddedToCart && handleAddToCart}>{hasAlreadyAddedToCart ? "View Cart" : "Add to Cart"}</button>
+                            <button className='p-2 w-[200px] text-white bg-black text-sm' onClick={() => handleAddToCart(selectedProduct)}>{hasAlreadyAddedToCart ? "View Cart" : "Add to Cart"}</button>
                         </div>
                     </div>
                 </div>
