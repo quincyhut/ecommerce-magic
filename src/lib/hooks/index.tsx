@@ -5,12 +5,12 @@ import { removeCartById, removeWishListById, setCartData, setPreviewProduct, set
 import { IProductCards } from "@/components/ProductCards/types";
 import { useRouter } from "next/navigation";
 
-
 export const useCart = ({ productId = null }: { productId?: string | null } = {}) => {
     const { cart, wishlist, previewProduct } = useSelector((state: any) => state.productReducer);
     const [cartLists, setCartLists] = useState([]);
     const [wishList, setWishLists] = useState([]);
     const [totalCart, setTotalCart] = useState(0);
+    const shippingCost = 100;
 
     const dispatch = useDispatch();
     const router = useRouter();
@@ -27,6 +27,17 @@ export const useCart = ({ productId = null }: { productId?: string | null } = {}
     const hasAlreadyLoved = useMemo(() => {
         return wishList?.some((list:any) => list._id === productId) ?? false;
     }, [productId]);
+    const totalCost: number = useMemo(() => {
+        let totalAmount = 0;
+
+        cartLists?.forEach((product) => {
+            const { price, quantity } = product;
+            const totalPrice = price * quantity;
+
+            totalAmount += totalPrice;
+        });
+        return totalAmount;
+    }, [cartLists]);
 
     const handleAddToCart = useCallback((e:any, selectedProduct: any) => {
         e.stopPropagation();
@@ -56,6 +67,8 @@ export const useCart = ({ productId = null }: { productId?: string | null } = {}
 
     return {
         totalCart,
+        totalCost,
+        shippingCost,
         previewProduct,
         cartLists,
         wishList,
