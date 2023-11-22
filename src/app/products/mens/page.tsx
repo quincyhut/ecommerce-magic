@@ -13,7 +13,7 @@ const Mens = () => {
 
     return (
         <div className="w-[100vw] flex-center">
-            <div className="py-10 px-4 w-full md:w-[75vw]">
+            <div className="py-10 px-7 w-full md:w-[75vw]">
                 <ProductBreadcumb links={breadcrumbLinks} handleSorting={handleSorting} />
                 <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
                     {
