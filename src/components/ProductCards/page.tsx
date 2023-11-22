@@ -36,7 +36,7 @@ const ProductCards = (details: IProductCards) => {
                             )
                         }
                         {
-                           allowDelete &&
+                            allowDelete &&
                             (
                                 <div className='bg-white p-3 rounded-full cursor-pointer hover:opacity-80' onClick={(e) => handleDeleteWishlist(e, details?._id)}>
                                     <AiFillDelete className='text-lg text-slate-600' />

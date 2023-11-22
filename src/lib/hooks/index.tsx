@@ -19,14 +19,14 @@ export const useCart = ({ productId = null }: { productId?: string | null } = {}
         setCartLists(cart);
         setWishLists(wishlist);
         setTotalCart(cart?.length ?? 0);
-    }, [cart]);
+    }, [cart, wishlist]);
 
     const hasAlreadyAddedToCart = useMemo(() => {
         return cart?.some((product: IProductCards) => product._id === productId);
     }, [cart, productId]);
     const hasAlreadyLoved = useMemo(() => {
-        return wishList?.some((list:any) => list._id === productId) ?? false;
-    }, [productId]);
+        return wishList?.some((list: any) => list._id === productId);
+    }, [wishList, productId]);
     const totalCost: number = useMemo(() => {
         let totalAmount = 0;
 
@@ -39,7 +39,7 @@ export const useCart = ({ productId = null }: { productId?: string | null } = {}
         return totalAmount;
     }, [cartLists]);
 
-    const handleAddToCart = useCallback((e:any, selectedProduct: any) => {
+    const handleAddToCart = useCallback((e: any, selectedProduct: any) => {
         e.stopPropagation();
         if (!hasAlreadyAddedToCart) dispatch(setCartData(selectedProduct));
     }, []);
@@ -48,7 +48,7 @@ export const useCart = ({ productId = null }: { productId?: string | null } = {}
         dispatch(removeCartById(id));
     }, []);
 
-    const handleAddToWishList = useCallback((e: React.MouseEvent<HTMLElement>, product:IProductCards| any) => {
+    const handleAddToWishList = useCallback((e: React.MouseEvent<HTMLElement>, product: IProductCards | any) => {
         e.stopPropagation();
 
         dispatch(setWishList(product));
@@ -56,7 +56,7 @@ export const useCart = ({ productId = null }: { productId?: string | null } = {}
 
     const handleDeleteWishlist = useCallback((e: React.MouseEvent<HTMLElement>, id: IProductCards | any) => {
         e.stopPropagation();
-        
+
         dispatch(removeWishListById(id));
     }, [wishList]);
 
