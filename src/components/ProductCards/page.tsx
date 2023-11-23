@@ -43,7 +43,7 @@ const ProductCards = (details: IProductCards) => {
                                 </div>
                             )
                         }
-                        <div className={`flex xl:hidden w-fit rounded-full p-3 cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={(e) => handleAddToCart(e, details)}>
+                        <div className={`flex 2xl:hidden w-fit rounded-full p-3 cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={(e) => handleAddToCart(e, details)}>
                             <BsCart2 className='text-lg' />
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const ProductCards = (details: IProductCards) => {
                         <p className='text-sm text-red-600 line-through'>NPR {prevPrice}</p>
                     </div>
                 </div>
-                <div className={`hidden xl:flex mt-2 w-fit rounded-full p-[9px] cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={(e) => handleAddToCart(e, details)}>
+                <div className={`hidden 2xl:flex mt-2 w-fit rounded-full p-[9px] cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={(e) => handleAddToCart(e, details)}>
                     <BsCart2 className='text-xl' />
                 </div>
             </div>
