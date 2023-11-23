@@ -24,7 +24,7 @@ const ProductPreview = () => {
     return (
         <div className="w-[100vw] flex-center">
             <div className="py-5 px-4 w-full md:w-[75vw] flex-center">
-                <ProductBreadcumb links={breadcrumbLinks} handleSorting={handleSorting} hideSorting={true} />
+                <ProductBreadcumb links={breadcrumbLinks} applySorting={handleSorting} hideSorting={true} />
                 <div className='w-full flex flex-col sm:flex-row flex-wrap'>
                     <div className="h-fit w-full sm:w-1/2">
                         <div className="h-[550px] w-full relative">

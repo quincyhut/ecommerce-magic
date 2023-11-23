@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { ISortCriteria } from '@/lib/types';
 import _ from 'lodash';
 
-const ProductBreadcumb = ({ links, productLists, hideSorting = false, applySorting }: ProductBreadCrumb) => {
+const ProductBreadcumb = ({ links, productLists = [], hideSorting = false, applySorting }: ProductBreadCrumb) => {
     const router = useRouter();
 
     const sortCriteria: ISortCriteria[] = [
