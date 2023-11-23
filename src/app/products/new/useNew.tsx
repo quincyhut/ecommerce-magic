@@ -1,3 +1,5 @@
+import { ISortCriteria } from "@/lib/types";
+import _ from "lodash";
 import { useState } from "react";
 
 
@@ -60,8 +62,8 @@ export const useNew = () => {
 
     const [productLists, setProductLists] = useState(mockProductLists);
 
-    const handleSorting = () => {
-
+    const handleSorting = (result: Object[]) => {
+        setProductLists(result);
     }
 
     return {

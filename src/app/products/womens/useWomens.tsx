@@ -60,8 +60,8 @@ const useWomens = () => {
         { title: 'Womens', href: '/products/womens' }
     ];
 
-    const handleSorting = () => {
-
+    const handleSorting = (result: Object[]) => {
+        setProductLists(result);
     }
 
     return {

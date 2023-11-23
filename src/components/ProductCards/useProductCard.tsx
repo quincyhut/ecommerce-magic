@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useCart } from "@/lib/hooks";
 
 export const useProductCard = (product: any) => {

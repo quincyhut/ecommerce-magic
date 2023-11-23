@@ -16,3 +16,8 @@ export interface ProductReducer {
         wishlist: Array<IProductCards>,
     }
 }
+
+export interface ISortCriteria {
+    label: string;
+    value: string;
+}

@@ -1,3 +1,4 @@
+import { ISortCriteria } from "@/lib/types";
 
 export interface Links {
     title: string;
@@ -7,5 +8,6 @@ export interface Links {
 export interface ProductBreadCrumb {
     links: Links[],
     hideSorting?: boolean,
-    handleSorting: () => void;
+    productLists: Object[],
+    applySorting: (result: Object[]) => void;
 }
