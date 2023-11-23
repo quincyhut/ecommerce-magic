@@ -25,7 +25,7 @@ const Banner = ({ title, subtitle, btnText, offerContent, imgSrc1, imgSrc2 }: IB
                 <div className={`h-[400px] w-[250px] relative border border-dotted border-green-900 transform-0 sm:transform -translate-y-5`}>
                     <Image src={imgSrc2} layout="fill" objectFit="cover" alt='helo' className="p-1" />
                 </div>
-                <div className="hidden sm:block h-[400px] w-[100vw] sm:w-[250px] relative border border-dotted border-green-900 transform-0 sm:transform sm:translate-y-5">
+                <div className="hidden 2xl:block h-[400px] w-[100vw] sm:w-[250px] relative border border-dotted border-green-900 transform-0 sm:transform sm:translate-y-5">
                     <Image src={imgSrc1} layout="fill" objectFit="cover" alt='helo' className="p-1" />
                 </div>
             </div>

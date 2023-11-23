@@ -8,6 +8,6 @@ export interface Links {
 export interface ProductBreadCrumb {
     links: Links[],
     hideSorting?: boolean,
-    productLists: Object[],
+    productLists?: Object[],
     applySorting: (result: Object[]) => void;
 }
