@@ -103,6 +103,7 @@ Before you start, make sure you have the following installed on your system:
 ```bash
    npm i redux-persist @types/redux-persist
 ```
+
 ## Authors
 
 - [Parbat Lama](https://lamaparbat.com.np/)
