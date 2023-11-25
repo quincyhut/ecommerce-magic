@@ -5,7 +5,7 @@ import { AiOutlineHeart, AiFillHeart, AiFillDelete } from 'react-icons/ai';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { IProductCards } from './types';
 import { useProductCard } from './useProductCard';
-import { BsCart2 } from 'react-icons/bs';
+import { BsCart2, BsCartFill } from 'react-icons/bs';
 
 const ProductCards = (details: IProductCards) => {
     const { title, price, prevPrice, allowLoveReact, allowDelete = false } = details;
@@ -43,8 +43,8 @@ const ProductCards = (details: IProductCards) => {
                                 </div>
                             )
                         }
-                        <div className={`flex 2xl:hidden w-fit rounded-full p-3 cursor-pointer hover:bg-black hover:text-white ${hasAlreadyAddedToCart ? 'bg-black text-white shadow-inner' : 'bg-white text-slate-700 drop-shadow-md'}`} onClick={(e) => handleAddToCart(e, details)}>
-                            <BsCart2 className='text-lg' />
+                        <div className={`flex 2xl:hidden w-fit rounded-full p-3 cursor-pointer hover:bg-black hover:text-white bg-white drop-shadow-md ${hasAlreadyAddedToCart ? ' text-red-500 shadow-inner' : 'text-slate-700'}`} onClick={(e) => handleAddToCart(e, details)}>
+                            { hasAlreadyAddedToCart ? <BsCartFill className='text-lg' /> :  <BsCart2 className='text-lg' /> }
                         </div>
                     </div>
                 </div>

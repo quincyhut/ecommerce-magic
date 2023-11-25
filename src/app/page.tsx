@@ -190,7 +190,7 @@ export default function Home() {
                   <d.icon className='text-3xl sm:text-4xl' />
                   <div>
                     <h3 className="hidden sm:flex font-semibold">{d?.title}</h3>
-                    <span className="text-sm relative -top-1 hidden sm:block">{d?.subtitle}</span>
+                    <span className="text-sm relative -top-1 hidden lg:block">{d?.subtitle}</span>
                   </div>
                 </div>
 

@@ -8,7 +8,7 @@ import { IBanner } from './types';
 const Banner = ({ title, subtitle, btnText, offerContent, imgSrc1, imgSrc2 }: IBanner) => {
 
     return (
-        <div className={`bg-white sm:bg-zinc-100 px-0 h-[550px] overflow-hidden flex flex-col-reverse gap-1 sm:gap-5 md:flex-col-reverse sm:flex-row lg:flex-row items-start md:justify-center md:items-start lg:justify-between lg:items-center sm:px-20 text-black`}>
+        <div className={`bg-white sm:bg-zinc-100 px-0 md:h-[80vh] md:bg-red-500 lg:h-[60vh] overflow-hidden flex flex-col-reverse gap-1 sm:gap-5 md:flex-col-reverse sm:flex-col lg:flex-row items-start md:justify-center md:items-start lg:justify-between lg:items-center sm:px-20 text-black`}>
             <div>
                 <h1 className='mt-3'>{title}</h1>
                 <h3>{subtitle}</h3>
