@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prod": "next export"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -30,7 +31,7 @@
     "redux-persist": "^6.0.0",
     "sanity": "^3.18.1",
     "stripe": "^14.2.0",
-    "styled-components": "^5.2.3",
+    "styled-components": "^6.1.11",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7"
   },

@@ -5,7 +5,7 @@ const nextConfig = {
             "encrypted-tbn0.gstatic.com",
             "flowbite.com"
         ]
-    }
+    },
 }
 
 module.exports = nextConfig
